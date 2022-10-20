@@ -32,6 +32,8 @@ const PopularCocktail = () => {
 
   return (
     <Container>
+      <h1>Popular Cocktails</h1>
+
       <Splide options={{
         perPage: 3,
         gap: "1rem",
@@ -42,7 +44,7 @@ const PopularCocktail = () => {
             cocktails.map((cocktail, index) => {
               return(
                 <SplideSlide>
-                  <div onClick = {() => (navigate(`/${cocktail.idDrink}`))}>
+                  <Card onClick = {() => (navigate(`/${cocktail.idDrink}`))}>
                       <PopularCocktails
                             key={index}
                             imageurl={cocktail.strDrinkThumb}
@@ -51,7 +53,7 @@ const PopularCocktail = () => {
                             typeOfGlass={cocktail.strGlass}
                             category={cocktail.strCategory}
                       /> 
-                </div>
+                </Card>
               </SplideSlide>
             )
           })
@@ -65,6 +67,20 @@ const Container = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 3rem;
+
+  h1{
+    font-family: 'Abril Fatface', cursive;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+
+  }
+`
+
+const Card = styled.div`
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
 `
 
 export default PopularCocktail

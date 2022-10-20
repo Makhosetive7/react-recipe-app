@@ -77,15 +77,12 @@ const HoverDetails = styled.div`
 
 
 const Image = styled.img`
-    opacity: 1;
-    display: block;
+
+
     width: 100%;
     height: 30vh;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    :hover{
-        opacity: 0.3;
-    }
+
+
 `
 
 const BottomInformation = styled.div`

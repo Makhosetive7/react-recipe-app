@@ -7,18 +7,28 @@ import styled from 'styled-components'
 const Body = () => {
   return (
     <Container>
-      <PopularRecipe />
       <Banner />
-      <PopularCocktail />
 
+      <Popular>
+        <PopularRecipe />
+        <PopularCocktail />
+      </Popular>
+      
     </Container>
   )
 }
 
 const Container = styled.div`
-  border-left: 1px solid red;
-  border-right: 1px solid red;
+  border: 5px solid red;
   overflow: hidden;
+`
+const Popular = styled.div`
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ffffff50;
+
 `
 
 

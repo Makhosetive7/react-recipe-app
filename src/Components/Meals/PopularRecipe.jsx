@@ -26,6 +26,7 @@ const PopularRecipe = () => {
   
   return (
     <Container>
+      <h1>Popular Recipes</h1>
       <Splide options={{
         perPage: 3,
         gap: "1rem",
@@ -57,9 +58,16 @@ const PopularRecipe = () => {
 const Container = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
+
+  h1{
+    font-family: 'Abril Fatface', cursive;
+    padding-top: 2rem;
+    margin-left: 10rem;
+    font-size: 2rem;
+  }
 `
 const Card = styled.div`
-  display: grid;
+    display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
 `
