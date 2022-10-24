@@ -28,8 +28,8 @@ const PopularRecipe = () => {
     <Container>
       <h1>Popular Recipes</h1>
       <Splide options={{
+        type   : 'loop',
         perPage: 3,
-        gap: "1rem",
         drag: "free",
         arrows: false,
       }}>
@@ -60,10 +60,10 @@ const Container = styled.div`
   margin-right: 1rem;
 
   h1{
-    font-family: 'Abril Fatface', cursive;
-    padding-top: 2rem;
+    font-family: 'Shalimar', cursive;
     margin-left: 10rem;
-    font-size: 2rem;
+    padding-top: 2rem;
+    font-size: 4rem;
   }
 `
 const Card = styled.div`

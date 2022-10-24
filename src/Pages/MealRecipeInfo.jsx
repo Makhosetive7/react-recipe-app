@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+
+import { device } from "../Components/device";
+
 import styled from 'styled-components'
 
 
@@ -69,6 +72,8 @@ const DetailsContainer = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    overflow; hidden;
+
 `
 const Container = styled.div`
     margin-top: 5rem;
@@ -95,12 +100,21 @@ const Container = styled.div`
         margin-top: 2rem;
     }
 
+    @media ${device.mobileS} {
+
+            width: 100%;
+
+   
+  }
+  
 `
 const Details = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+
 `
 const Button = styled.button`
     padding: 1rem 2rem;

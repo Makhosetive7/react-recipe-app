@@ -91,8 +91,12 @@ const BottomInformation = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 10vh;
     padding-bottom: 2rem;
+
+    h1{
+        
+        margin-right: 10rem;
+    }
 `
 
 

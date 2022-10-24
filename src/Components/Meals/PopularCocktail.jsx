@@ -69,10 +69,10 @@ const Container = styled.div`
   margin-bottom: 3rem;
 
   h1{
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Shalimar', cursive;
     margin-left: 10rem;
-    margin-top: 1rem;
-    font-size: 2rem;
+
+    font-size: 3rem;
 
   }
 `
@@ -81,6 +81,7 @@ const Card = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
+  
 `
 
 export default PopularCocktail

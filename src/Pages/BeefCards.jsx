@@ -93,6 +93,12 @@ const BottomInformation = styled.div`
     flex-direction: column;
     height: 10vh;
     padding-bottom: 2rem;
+    
+    h1{
+        font-family: 'Shalimar', cursive;
+        font-size: 3rem;
+        padding-top: 1rem;
+    }
 `
 
 

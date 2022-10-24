@@ -77,8 +77,6 @@ const HoverDetails = styled.div`
 
 
 const Image = styled.img`
-
-
     width: 100%;
     height: 30vh;
 
@@ -90,8 +88,10 @@ const BottomInformation = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 10vh;
-    padding-bottom: 2rem;
+    h1{
+        letter-spacing: 10px;
+        margin-right: 10rem;
+    }
 `
 
 
