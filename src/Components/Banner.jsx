@@ -2,9 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { device } from "./device";
 
-import { TbArrowBottomCircle } from 'react-icons/tb';
-
-
 const Banner = () => {
 
   const style = { 
@@ -14,8 +11,6 @@ const Banner = () => {
   return (
     <Container>
         <Heading>Helping you prepare the best meal</Heading>
-        <Icon> <TbArrowBottomCircle  style ={style}/> </Icon>
-
     </Container>
   )
 }
@@ -23,7 +18,7 @@ const Banner = () => {
 
 const Container = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 70vh;
@@ -40,7 +35,7 @@ const Container = styled.div`
 `
 const Heading = styled.h1`
     font-family: 'Shalimar', cursive;
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 10px;
     color: whitesmoke;
 

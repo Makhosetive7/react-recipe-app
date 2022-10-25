@@ -32,8 +32,6 @@ const PopularCocktail = () => {
 
   return (
     <Container>
-      <h1>Popular Cocktails</h1>
-
       <Splide options={{
         perPage: 3,
         gap: "1rem",
@@ -67,14 +65,6 @@ const Container = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 3rem;
-
-  h1{
-    font-family: 'Shalimar', cursive;
-    margin-left: 10rem;
-
-    font-size: 3rem;
-
-  }
 `
 
 const Card = styled.div`

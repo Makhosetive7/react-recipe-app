@@ -94,8 +94,9 @@ const BottomInformation = styled.div`
     padding-bottom: 2rem;
 
     h1{
-        
-        margin-right: 10rem;
+        font-family: 'Shalimar', cursive;
+        font-size: 2.5rem;
+        letter-spacing: 10px;
     }
 `
 

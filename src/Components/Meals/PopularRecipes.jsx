@@ -1,21 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GrFavorite } from 'react-icons/gr';
-
 
 
 
 const PopularRecipes = ({imageurl, dish, area, category}) => {
 
 
-    const style = { 
-        backgroundColor: "whitesmoke" ,
-        color: "plum",
-        padding: "2rem",
-        margin: "1rem",
-        width: "2rem",
-        border: "4px solid black",
-    }
+
 
   return (
     <Container>
@@ -25,10 +16,6 @@ const PopularRecipes = ({imageurl, dish, area, category}) => {
 
         <CenterInformation>
             <Image src={imageurl} alt="" />
-
-            <HoverDetails>
-                <GrFavorite style={style}  /> 
-            </HoverDetails>
         </CenterInformation>
 
         <BottomInformation>
@@ -42,7 +29,6 @@ const PopularRecipes = ({imageurl, dish, area, category}) => {
 const Container = styled.div`
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
     margin: 2.5rem;
 `
 const TopInformation = styled.div`
@@ -57,30 +43,14 @@ const TopInformation = styled.div`
     padding-bottom: 1rem;
 `
 const CenterInformation = styled.div`
-    position: relative;
-`
-const HoverDetails = styled.div`
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-    :hover{
-        opacity: 1;
-    }
+
+
 `
 
 
 const Image = styled.img`
     width: 100%;
     height: 30vh;
-
-
 `
 
 const BottomInformation = styled.div`
@@ -89,8 +59,9 @@ const BottomInformation = styled.div`
     align-items: center;
     flex-direction: column;
     h1{
+        font-family: 'Shalimar', cursive;
+        font-size: 2.5rem;
         letter-spacing: 10px;
-        margin-right: 10rem;
     }
 `
 

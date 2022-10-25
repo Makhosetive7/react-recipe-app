@@ -7,13 +7,9 @@ import styled from 'styled-components'
 const Body = () => {
   return (
     <Container>
+      <PopularRecipe />
       <Banner />
-
-      <Popular>
-        <PopularRecipe />
-        <PopularCocktail />
-      </Popular>
-      
+      <PopularCocktail />
     </Container>
   )
 }
@@ -21,14 +17,6 @@ const Body = () => {
 const Container = styled.div`
   border: 5px solid red;
   overflow: hidden;
-`
-const Popular = styled.div`
-  margin-top: 2.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
-
 `
 
 

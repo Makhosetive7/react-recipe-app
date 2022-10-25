@@ -26,7 +26,6 @@ const PopularRecipe = () => {
   
   return (
     <Container>
-      <h1>Popular Recipes</h1>
       <Splide options={{
         type   : 'loop',
         perPage: 3,
@@ -56,15 +55,9 @@ const PopularRecipe = () => {
 }
 
 const Container = styled.div`
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
 
-  h1{
-    font-family: 'Shalimar', cursive;
-    margin-left: 10rem;
-    padding-top: 2rem;
-    font-size: 4rem;
-  }
 `
 const Card = styled.div`
     display: grid;
