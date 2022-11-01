@@ -1,12 +1,11 @@
 import React from 'react'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/css';
-import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import styled from 'styled-components'
 
-import PopulaRecipes from '../Meals/PopularRecipes'
+
+import PopulaRecipes from '../HomeComponents/PopularRecipes'
 
 const PopularRecipe = () => {
     const [recipe, setRecipe] = useState([]);
@@ -17,26 +16,20 @@ const PopularRecipe = () => {
 
     const getPopular = async() => {
 
-      const Api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
+      const Api = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Tunisian`)
       const data = await Api.json()
+      console.log(data)
       setRecipe(data.meals)
     }
 
 
   
   return (
-    <Container>
-      <Splide options={{
-        type   : 'loop',
-        perPage: 3,
-        drag: "free",
-        arrows: false,
-      }}>
+    <Container> 
           {recipe &&
             recipe.map((recipes, index) => {
               return(
-                <SplideSlide>
-                  <Card onClick = {() => (navigate(`/${recipes.idMeal}`))}>
+                  <div onClick = {() => (navigate(`/${recipes.idMeal}`))}>
                       <PopulaRecipes
                             key={index}
                             imageurl={recipes.strMealThumb}
@@ -44,25 +37,17 @@ const PopularRecipe = () => {
                             area={recipes.strArea}
                             category={recipes.strCategory}
                       /> 
-                </Card>
-              </SplideSlide>
+                </div>
             )
           })
         }
-      </Splide>
     </Container>
   )
 }
 
 const Container = styled.div`
-  margin-left: 20rem;
-  margin-right: 20rem;
-
-`
-const Card = styled.div`
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
 `
 
 export default PopularRecipe

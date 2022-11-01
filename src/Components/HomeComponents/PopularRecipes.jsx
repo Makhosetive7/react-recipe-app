@@ -1,30 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+const PopularRecipes = ({imageurl, dish}) => {
+  
+  return (
+    <Container>
+      <Card>
+          <Image src={imageurl} alt="" />
 
-const BeefCards = ({imageurl, area, category, title}) => {
-
-   
-
-    return (
-        <Container>
-
-        <Card>
-            <Image src={imageurl} alt="" />
-
-            <HoverDetails>
-                <h1> {area} </h1>
-                <h2> {title} </h2>
-            </HoverDetails>
-        </Card>
-
+          <HoverDetails>
+            <div>
+              <h2>&#127857;{dish}</h2>
+            </div>
+          
+          </HoverDetails>
+      </Card>
     </Container>
-        
-    )
-    }
+
+    
+  )
+}
 
 
-    const Container = styled.div`
-    background-color: white;
+const Container = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     margin: 2.5rem;
@@ -33,8 +30,10 @@ const BeefCards = ({imageurl, area, category, title}) => {
 
 const Card = styled.div`
     position: relative;
+   
 `
 const HoverDetails = styled.div`
+   
     transition: .5s ease;
     opacity: 0;
     position: absolute;
@@ -58,13 +57,11 @@ const HoverDetails = styled.div`
     }
 `
 
+
 const Image = styled.img`
     width: 100%;
     height: 60vh;
 `
 
 
-
-
-
-export default BeefCards
+export default PopularRecipes

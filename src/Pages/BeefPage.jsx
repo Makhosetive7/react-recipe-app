@@ -43,11 +43,8 @@ const BeefPage = () => {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
 
 `
 

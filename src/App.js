@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './Pages/Home'
+import Body from './Components/Body'
 import BeefPage from './Pages/BeefPage'
 import ChickenPage from './Pages/ChickenPage'
 import CockTailPage from './Pages/CockTailPage'
@@ -16,7 +16,7 @@ function App() {
   return (
     <div >
       <Routes>
-        <Route path = '/' element = {<Home />} />
+        <Route path = '/' element = {<Body />} />
         <Route path = '/beefPage' element = {<BeefPage />} />
         <Route path = '/chickenpage' element ={<ChickenPage />} />
         <Route path = '/cocktailPage' element ={<CockTailPage/>} />

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { device } from "../Components/device";
+import { device } from "../Components/HomeComponents/device";
 
 import styled from 'styled-components'
 
