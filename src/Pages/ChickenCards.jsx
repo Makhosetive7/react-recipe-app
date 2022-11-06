@@ -24,7 +24,7 @@ const Container = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     margin: 2.5rem;
-    font-family: 'Play', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 `
 
 const Card = styled.div`

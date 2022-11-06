@@ -41,7 +41,7 @@ const Container = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(40rem, 2fr));
     width: 100%;
     padding: 2rem;
-    font-family: 'Play', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     background-color: red;
     
     .social{

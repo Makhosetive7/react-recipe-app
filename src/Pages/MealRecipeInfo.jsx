@@ -8,8 +8,6 @@ import styled from 'styled-components'
 
 
 
-
-var id="";
 const MealRecipeInfo = () => {
     const [item, setItem] = useState(); 
     const [activeTab, setActiveTab] = useState('Instructions')
@@ -83,11 +81,12 @@ const Container = styled.div`
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 50%;
-    font-family: 'Play', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 
     .active{
         background-color: red;
         color: black;
+        font-family: 'Rajdhani', sans-serif;
     }
     h2{
         margin-bottom: 2rem;
@@ -99,7 +98,9 @@ const Container = styled.div`
     ul{
         margin-top: 2rem;
     }
-
+    img{
+        height: 45vh;
+    }
     @media ${device.mobileS} {
 
             width: 100%;
@@ -113,6 +114,8 @@ const Details = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+    color: red;
 
 
 `
@@ -123,6 +126,7 @@ const Button = styled.button`
     border: 2px solid black;
     margin-top: 1.5rem;
     margin-right: 2rem;
+    
 `
 const Info = styled.div`
     margin-top: 1.5rem;

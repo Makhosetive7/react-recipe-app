@@ -28,7 +28,8 @@ const BeefCards = ({imageurl, area, category, title}) => {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     margin: 2.5rem;
-    font-family: 'Play', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 5px;
 `
 
 const Card = styled.div`

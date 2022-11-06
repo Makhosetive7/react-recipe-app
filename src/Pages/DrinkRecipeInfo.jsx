@@ -69,6 +69,7 @@ const DetailsContainer = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    font-family: 'Orbitron', sans-serif;
 `
 const Container = styled.div`
     margin-top: 5rem;

@@ -44,6 +44,7 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     height: 10vh;
+    font-family: 'Orbitron', sans-serif;
     .nav-menu {
         position: absolute;
         left: -110%;

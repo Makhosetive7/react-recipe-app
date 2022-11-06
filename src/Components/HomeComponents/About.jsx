@@ -27,14 +27,14 @@ const Container = styled.h1`
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    font-family: 'Shalimar', cursive;
+    font-family: 'Satisfy', cursive;
     font-size: 3rem;
     letter-spacing: 5px;
     width: 100%;
 `
 const Salutation = styled.h1`
     margin-top: 1rem;
-    font-family: 'Play', sans-serif;
+    font-family: 'Poor Story', cursive;
     font-size: 10rem;
     color: red;
     span{
