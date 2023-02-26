@@ -10,12 +10,13 @@ import PopulaRecipes from '../HomeComponents/PopularRecipes'
 const PopularRecipe = () => {
     const [recipe, setRecipe] = useState([]);
     let navigate = useNavigate()
+
+    
     useEffect(() => {
         getPopular();
     }, [])
 
     const getPopular = async() => {
-
       const Api = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Tunisian`)
       const data = await Api.json()
       console.log(data)

@@ -1,9 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 
+
 const Search = () => {
+
+  const [input, setInput] = useState("")
+  const Navigate = useNavigate
+
+  const HandleSubmit = (e) => {
+    e.preventDefault()
+    Navigate("/searched / + input")
+  }
+
 
   const [activeTab, setActiveTab] = useState('Instructions')
 
@@ -16,12 +27,15 @@ const Search = () => {
 
       <div>
         {activeTab === 'Meals' && (
-          <div >
+          <form  onSubmit =  {HandleSubmit}>
             <input 
+              onChange={(e) => setInput(e.target.value)}
               type="text" 
               placeholder='search meals '
+              value={input}
             />
-          </div>
+          </form>
+          
         ) }
             {activeTab === 'Cocktails' && (
           <div >
