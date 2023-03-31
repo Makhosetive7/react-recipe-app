@@ -7,7 +7,7 @@ import Favorites from './Pages/Favorites'
 import MealRecipeInfo from './Pages/MealRecipeInfo'
 import DrinkRecipeInfo from './Pages/DrinkRecipeInfo'
 import Searched from './Pages/Searched';
-import LogIn from './Pages/LogIn';
+import NavBar from './Components/HomeComponents/NavBar'
 import { Routes, Route } from 'react-router-dom'
 
 
@@ -18,9 +18,9 @@ function App() {
 
   return (
     <div >
+      <NavBar />
       <Routes>
-        <Route path='/' element = {<LogIn/> } />
-        <Route path = '/body' element = {<Body />} />
+        <Route path = '/' element = {<Body />} />
         <Route path = '/beefPage' element = {<BeefPage />} />
         <Route path = '/chickenpage' element ={<ChickenPage />} />
         <Route path = '/cocktailPage' element ={<CockTailPage/>} />
