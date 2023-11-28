@@ -26,8 +26,7 @@ const Footer = () => {
                 Debitis doloremque numquam impedit, animi voluptas repellat, cum dicta ratione temporibus quidem culpa consectetur libero, eaque qui consequatur incidunt expedita magnam sapiente! Alias, numquam. Veniam temporibus debitis beatae laboriosam laborum.
                 Eum omnis distinctio accusamus blanditiis, maxime necessitatibus aliquid dignissimos fuga, consectetur ea atque. Voluptatibus doloremque at enim ad similique obcaecati ipsum? Debitis nesciunt id consectetur? Amet repudiandae porro error sed!
                 Illo, debitis quaerat. Voluptas, porro. Numquam eligendi fugiat facere vero esse saepe ut, ullam, quibusdam deleniti adipisci tempore omnis quae modi mollitia placeat voluptatem recusandae maiores minus consequatur ipsa quos.
-                Earum, corporis quas! Error natus impedit illo in, nemo vitae cumque quo adipisci eos reiciendis suscipit architecto quibusdam molestias, accusamus mollitia saepe, aliquam hic facere. Repudiandae neque suscipit ad possimus!
-                Neque iste tempore ab quos itaque quaerat iure optio ipsum quas, odit veritatis numquam, dolores minus fuga ad perspiciatis! Illum, ducimus iure. Mollitia laborum non ad voluptates dolore, atque optio.
+                
             </p>
         </div>
 
@@ -42,8 +41,8 @@ const Container = styled.div`
     width: 100%;
     padding: 2rem;
     font-family: 'Rajdhani', sans-serif;
-    background-color: red;
-    
+    background-color: #c4b0ff;
+    color: white;
     .social{
         display: flex;
         justify-content: space-between;

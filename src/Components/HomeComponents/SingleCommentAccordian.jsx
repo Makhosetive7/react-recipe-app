@@ -38,7 +38,7 @@ const Container = styled.div`
     align-items: center;
     height: 5rem;
     font-size: 1.5rem;
-    cursor: crosshair;
+    cursor: pointer;
     color: red;
 
     .user {
@@ -66,7 +66,7 @@ const Container = styled.div`
     align-items: center;
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: "Rajdhani", sans-serif;

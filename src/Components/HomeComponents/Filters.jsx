@@ -13,23 +13,23 @@ const Filters = () => {
         <nav className="menuWrap" role="navigation">
           <ul id="menu" className="menu">
             <li className="menu-item">
-              <NavLink className="links" to="beefpage">
+              <NavLink className="links" to="/beefpage">
                 <p>Beef_meals</p>
               </NavLink>
             </li>
             <li className="menu-item">
-              <NavLink className="links" to="cocktailpage">
+              <NavLink className="links" to="/cocktailPage">
                 <p>Cocktails</p>
               </NavLink>
             </li>
             <li className="menu-item">
-              <NavLink className="links" chickenpage>
+              <NavLink className="links" to ="/chickenpage">
                 <p>Chicken_meals</p>
               </NavLink>
             </li>
             <li className="menu-item">
               <NavLink className="links" to ="Dessertpage">
-                <p>Pizza_Slices</p>
+                <p>Pizza</p>
               </NavLink>
             </li>
             <li className="menu-item">
@@ -49,21 +49,9 @@ const Filters = () => {
             </li>
             <li className="menu-item">
               <NavLink className="links" to = "BreakFast">
-                <p>European_meals</p>
+                <p>BreakFast</p>
               </NavLink>
-            </li>
-            <li className="menu-item">
-              <NavLink className="links" to = "SideDish">
-                <p>European_meals</p>
-              </NavLink>
-            </li>
-            <li className="menu-item">
-              <NavLink className="links" to="favorites">
-                <p>Favourites</p>
-              </NavLink>
-            </li>
-
-            
+            </li>          
           </ul>
         </nav>
       </main>
@@ -76,9 +64,6 @@ const Filter = styled.div`
   align-items: center;
   flex-direction: column;
   padding-bottom: 1rem;
-  padding-top: 1rem;
-
-
   .heading{
     p{
       font-size: 2rem;
@@ -140,6 +125,8 @@ const Filter = styled.div`
 
   .menu-item a {
     display: inline-block;
+    color: red;
+    font-weight: 500;
   }
 
   .menu-item:hover,

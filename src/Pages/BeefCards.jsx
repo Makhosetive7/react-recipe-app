@@ -1,71 +1,95 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import { FiTwitter } from "react-icons/fi";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { FaInstagram } from "react-icons/fa";
 
-const BeefCards = ({imageurl, area, category, title}) => {
 
-   
-
-    return (
-        <Container>
-
-        <Card>
-            <Image src={imageurl} alt="" />
-
-            <HoverDetails>
-                <h1> {area} </h1>
-                <h2> {title} </h2>
-            </HoverDetails>
-        </Card>
-
+const BeefCards = ({ imageurl, instructions, area, category,dish, title }) => {
+  return (
+    <Container>
+      <article class="card">
+        <div class="image">
+          <img src={imageurl} alt="" />
+          <p class="note">{title} || {area} meal</p>
+        </div>
+        <div class="card__content">
+          <h3>Cooking Instuctions</h3>
+          <p>
+            {instructions.substring(0, 500)}
+            <span>....read more</span>
+          </p>
+          <h3 class="label">Share meal on:</h3>
+          <div className="media">
+            <ul>
+              <li>
+                <FiTwitter />
+              </li>
+              <li>
+                <AiOutlineWhatsApp />
+              </li>
+              <li>
+                <FaInstagram />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </Container>
-        
-    )
+  );
+};
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  article {
+    width: 25vw;
+    border: 1px solid pink;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: #c4b0ff;
+    margin-bottom: 1rem;
+
+    .card__content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-family: Rajdhani;
+      h3 {
+        letter-spacing: 2px;
+      }
+      span {
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+      }
     }
 
-
-    const Container = styled.div`
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-    margin: 2.5rem;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 5px;
-`
-
-const Card = styled.div`
-    position: relative;
-`
-const HoverDetails = styled.div`
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    background-color: transparent;
-    :hover{
+    .media {
+      ul {
+        list-style: none;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        opacity: 3;
-        color: red;
+      }
     }
-`
+    .image {
+      img {
+        width: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+      p {
+        font-family: Rajdhani;
+        font-size: 20px;
+        padding-left: 1rem;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+`;
 
-const Image = styled.img`
-    width: 100%;
-    height: 60vh;
-`
-
-
-
-
-
-export default BeefCards
+export default BeefCards;

@@ -13,12 +13,8 @@ import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
-
-
-
   return (
     <div >
-
       <Routes>
         <Route path = '/' element = {<Body />} />
         <Route path = '/beefPage' element = {<BeefPage />} />

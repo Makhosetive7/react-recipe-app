@@ -15,7 +15,7 @@ const PopularBeefRecipes = ({
       <article class="card">
         <div class="image">
           <img src={imageurl} alt="" />
-          <p class="note">{area} meal</p>
+          <p class="note">{dish} || {area} meal</p>
         </div>
         <div class="card__content">
           <h3>Cooking Instuctions</h3>
@@ -50,7 +50,7 @@ const Container = styled.div`
   flex-direction: column;
 
   article {
-    width: 20vw;
+    width: 25vw;
     border: 1px solid pink;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
