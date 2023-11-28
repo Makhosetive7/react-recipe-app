@@ -1,6 +1,6 @@
 export const accordionContent = [
     {
-      title: 'User - 1',
+      title: 'Ellis Ndlela',
       content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
       laborum cupiditate possimus labore, hic temporibus velit dicta earum
       suscipit commodi eum enim atque at? Et perspiciatis dolore iure
@@ -15,7 +15,7 @@ export const accordionContent = [
       
     },
     {
-      title: 'User - 2',
+      title: 'Atlas Dube',
       content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
       reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
       quaerat iure quos dolorum accusantium ducimus in illum vero commodi
@@ -30,7 +30,7 @@ export const accordionContent = [
       image: 'https://images.pexels.com/photos/1441151/pexels-photo-1441151.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
-      title: 'User - 3',
+      title: 'Eithan Dube',
       content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
       quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
       dolor ut sequi minus iste? Quas? Consequuntur, animi beatae id velit molestias asperiores commodi minus laudantium tenetur totam, rerum autem. Laborum deleniti, quo dolorem repellat tenetur, possimus, quia praesentium similique ipsam suscipit officiis omnis maiores necessitatibus.

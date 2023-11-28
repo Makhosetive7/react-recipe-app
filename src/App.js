@@ -7,7 +7,7 @@ import Favorites from './Pages/Favorites'
 import MealRecipeInfo from './Pages/MealRecipeInfo'
 import DrinkRecipeInfo from './Pages/DrinkRecipeInfo'
 import Searched from './Pages/Searched';
-import NavBar from './Components/HomeComponents/NavBar'
+//import NavBar from './Components/HomeComponents/NavBar'
 import { Routes, Route } from 'react-router-dom'
 
 
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div >
-      <NavBar />
+
       <Routes>
         <Route path = '/' element = {<Body />} />
         <Route path = '/beefPage' element = {<BeefPage />} />
