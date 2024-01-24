@@ -15,7 +15,9 @@ const PopularBeefRecipes = ({
       <article class="card">
         <div class="image">
           <img src={imageurl} alt="" />
-          <p class="note">{dish} || {area} meal</p>
+          <p class="note">
+            {dish} || {area} meal
+          </p>
         </div>
         <div class="card__content">
           <h3>Cooking Instuctions</h3>
@@ -50,20 +52,25 @@ const Container = styled.div`
   flex-direction: column;
 
   article {
-    width: 25vw;
+    width: 90%;
     border: 1px solid pink;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: #c4b0ff;
 
+    @media screen and (max-width: 800px) {
+      margin-bottom: 1rem;
+    }
+
+
     .card__content {
       padding-left: 1rem;
       padding-right: 1rem;
       font-family: Rajdhani;
-      h3{
+      h3 {
         letter-spacing: 2px;
       }
-      span{
+      span {
         color: white;
         font-weight: bold;
         font-style: italic;

@@ -47,7 +47,7 @@ const Container = styled.div`
   flex-direction: column;
 
   article {
-    width: 25vw;
+    width: 90%;
     border: 1px solid pink;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;

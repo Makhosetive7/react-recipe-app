@@ -4,7 +4,7 @@ import styled from "styled-components";
 const About = () => {
   return (
     <Container>
-      <div classname="left">
+      <div className="left">
         <h1>
           hello <span>&#128075;</span>
         </h1>
@@ -12,7 +12,7 @@ const About = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
           minima odit, delectus..
         </p>
-        <button classname="btn">View recipes</button>
+        <button className="btn">View recipes</button>
       </div>
       <div className="right">
         <img
@@ -32,6 +32,7 @@ const Container = styled.h1`
   width: 100%;
   height: 60vh;
 
+
   .right {
     display: flex;
     justify-content: center;
@@ -43,6 +44,7 @@ const Container = styled.h1`
       border-bottom-left-radius: 30px;
     }
   }
+  
   p {
     font-size: 1.5rem;
     color: #c4b0ff;
@@ -67,6 +69,14 @@ const Container = styled.h1`
     border: 1px solid transparent;
     color: red;
   }
+  @media screen and (max-width: 900px) {
+    display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+    .right {
+      display: none;
+    }
+ }
 `;
 
 export default About;
