@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
 import CockTailCards from "./CockTailCards";
 import Filters from "../Components/HomeComponents/Filters";
+import { useNavigate } from "react-router-dom";
 
 const CockTailPage = () => {
+  const navigate = useNavigate()
   const [alcoholic, setAlcoholic] = useState([]);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const CockTailPage = () => {
         {alcoholic &&
           alcoholic.map((cocktail, index) => {
             return (
-              <div>
+              <div onClick = {() => (navigate(`/${cocktail.idDrink}`))}>
                 <CockTailCards
                   key={index}
                   imageurl={cocktail.strDrinkThumb}

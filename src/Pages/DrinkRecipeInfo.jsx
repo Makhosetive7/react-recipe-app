@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-//var id = "";
 const DrinkRecipeInfo = () => {
   const [item, setItem] = useState();
   const [activeTab, setActiveTab] = useState("Instructions");
