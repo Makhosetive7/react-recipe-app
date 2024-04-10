@@ -4,13 +4,13 @@
 Created **Food Recipe App** leveraging **<em>ReactJS</em>** for exploring **<em>React</em>** concepts and **<em>API integration</em>**. Users can discover diverse recipes in a clean, responsive design suitable for both desktop and mobile devices. Pages display meal cards and ingredients, linked to preparation instructions.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Features :
+### Features :
 + Search functionality to find recipes based on keywords
 + Responsive design that works seamlessly on both desktop and mobile devices
 + Components for displaying recipe details, images, and titles
 + Recipe categorization and filtering
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Lesson Learnt
+### Lesson Learnt
 + React router DOM
 + React Hooks
 -useState Hook
@@ -21,7 +21,7 @@ Created **Food Recipe App** leveraging **<em>ReactJS</em>** for exploring **<em>
 + Responsiveness of Web pages
 + API calls using Axios
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Getting Started with Food Recipe App
+### Getting Started
 To install and run the Weather App locally, follow these steps:
 + Clone the repository: git clone 
 + Navigate to the project directory: cd 
