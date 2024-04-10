@@ -1,8 +1,8 @@
 ## **Food Recipe App**
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Description :
-
 Created **Food Recipe App** leveraging **<em>ReactJS</em>** for exploring **<em>React</em>** concepts and **<em>API integration</em>**. Users can discover diverse recipes in a clean, responsive design suitable for both desktop and mobile devices. Pages display meal cards and ingredients, linked to preparation instructions.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Features :
 + Search functionality to find recipes based on keywords
