@@ -4,17 +4,15 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Project Description 
 
-This Food Recipe App was built using ReactJS with the primary motivation of gaining hands-on experience with React concepts and API integration. The app allows users to explore a variety of food recipes, featuring a clean and responsive design that works seamlessly on both desktop and mobile devices. The website consists of a few pages that render cards showing meals and ingredients, and when clicked, it navigates to another page displaying instructions for preparing those meals. This app can be helpful in homes during meal preparation.
+Created **Food Recipe App** leveraging **<em>ReactJS</em>** for exploring **<em>React</em>** concepts and **<em>API integration</em>**. Users can discover diverse recipes in a clean, responsive design suitable for both desktop and mobile devices. Pages display meal cards and ingredients, linked to preparation instructions.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Key Features include
 + Search functionality to find recipes based on keywords
 + Responsive design that works seamlessly on both desktop and mobile devices
 + Components for displaying recipe details, images, and titles
 + Recipe categorization and filtering
-+ 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Key lesson Learnt From Building this Project
-
 + React router DOM
 + React Hooks
 -useState Hook
