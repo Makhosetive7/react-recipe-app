@@ -1,18 +1,16 @@
-
-# Name: **Makhosetive Sibanda**
-## Project Title: **Food Recipe App**
+## **Food Recipe App**
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Project Description 
+# Description :
 
 Created **Food Recipe App** leveraging **<em>ReactJS</em>** for exploring **<em>React</em>** concepts and **<em>API integration</em>**. Users can discover diverse recipes in a clean, responsive design suitable for both desktop and mobile devices. Pages display meal cards and ingredients, linked to preparation instructions.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Key Features include
+# Features :
 + Search functionality to find recipes based on keywords
 + Responsive design that works seamlessly on both desktop and mobile devices
 + Components for displaying recipe details, images, and titles
 + Recipe categorization and filtering
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Key lesson Learnt From Building this Project
+# Lesson Learnt
 + React router DOM
 + React Hooks
 -useState Hook
