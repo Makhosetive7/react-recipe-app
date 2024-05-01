@@ -24,10 +24,7 @@ const BeefPage = () => {
   };
 
   return (
-    <Container>\
-        <div className="filters">
-        <Filters/>
-        </div>
+    <Container>
       <div className="beef_page_mapping">
       {beef &&
         beef.map((beefs) => {
@@ -52,6 +49,7 @@ const BeefPage = () => {
 const Container = styled.div`
 display: flex;
 flex-direction: column;
+padding-top: 100px;
 
 .beef_page_mapping{
   display: grid;

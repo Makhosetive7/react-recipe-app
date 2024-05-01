@@ -8,7 +8,7 @@ const CommentsAccordian = () => {
   return (
     <Container>
       <div className="header">
-        <p>What People say</p>
+        <h2>What People say</h2>
       </div>
       <div className="accordion">
         {accordionContent.map(({ title, content, image }) => (
@@ -25,11 +25,8 @@ const CommentsAccordian = () => {
 
 const Container = styled.div`
   .header {
-    p {
-      font-size: 2rem;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
-      padding: 1rem;
+    h2 {
+     
       font-family: Rajdhani;
     }
   }

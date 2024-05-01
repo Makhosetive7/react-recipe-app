@@ -1,17 +1,17 @@
 import React from 'react'
-import About from './HomeComponents/About'
 import Footer from './HomeComponents/Footer'
 import styled from 'styled-components'
 import CommentsAccordian from './HomeComponents/CommentsAccordian'
-import Categories from './HomeComponents/Filters'
 import PopularBeefRecipe from './HomeComponents/PopularBeefRecipe'
+import Banner from './HomeComponents/Banner'
+import About from './HomeComponents/About'
 
 const Body = () => {
   return (
     <Container>
       {/*<Search />*/}
-      <About />
-      <Categories/>
+      <Banner/>
+      <About/>
       <PopularBeefRecipe/>
       <CommentsAccordian />
       <Footer />

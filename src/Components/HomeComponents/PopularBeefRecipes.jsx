@@ -15,30 +15,15 @@ const PopularBeefRecipes = ({
       <article class="card">
         <div class="image">
           <img src={imageurl} alt="" />
-          <p class="note">
-            {dish} || {area} meal
-          </p>
         </div>
         <div class="card__content">
-          <h3>Cooking Instuctions</h3>
-          <p>
-            {instructions.substring(0, 500)}
-            <span>....read more</span>
+        <p class="note">
+            {dish} || {area} meal
           </p>
-          <h3 class="label">Share meal on:</h3>
-          <div className="media">
-            <ul>
-              <li>
-                <FiTwitter />
-              </li>
-              <li>
-                <AiOutlineWhatsApp />
-              </li>
-              <li>
-                <FaInstagram />
-              </li>
-            </ul>
-          </div>
+          <h4>Cooking Instuctions</h4>
+          <p>
+            {instructions.substring(0, 100)}
+          </p>
         </div>
       </article>
     </Container>
@@ -52,8 +37,7 @@ const Container = styled.div`
   flex-direction: column;
 
   article {
-    width: 90%;
-    border: 1px solid pink;
+    width: 20rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: #c4b0ff;
@@ -70,11 +54,6 @@ const Container = styled.div`
       h3 {
         letter-spacing: 2px;
       }
-      span {
-        color: white;
-        font-weight: bold;
-        font-style: italic;
-      }
     }
 
     .media {
@@ -88,8 +67,8 @@ const Container = styled.div`
     .image {
       img {
         width: 100%;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        height: 15rem;
+        object-fit: cover;
       }
       p {
         font-family: Rajdhani;

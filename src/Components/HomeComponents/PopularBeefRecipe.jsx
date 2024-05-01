@@ -25,7 +25,7 @@ const PopularBeefRecipe = () => {
   return (
     <Container> 
       <div className='heading'>
-        <p>Random Pupolar Beef Meals</p>
+        <h2>Random Pupolar Beef Meals</h2>
       </div>
           <div className='mapping_recipes'>
           {recipe &&
@@ -54,11 +54,7 @@ display: flex;
 flex-direction: column;
 
 .heading{
-  p{
-  font-size: 2rem;
-  border-top: 1px solid black ;
-  border-bottom: 1px solid black;
-  padding: 1rem;
+h2{
   font-family: Rajdhani;
 }
 }

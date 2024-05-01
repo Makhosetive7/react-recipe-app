@@ -10,13 +10,14 @@ import Searched from './Pages/Searched';
 //import NavBar from './Components/HomeComponents/NavBar'
 import { Routes, Route } from 'react-router-dom'
 import Logo from './Components/HomeComponents/Logo';
+import NavBar from './Components/HomeComponents/NavBar';
 
 
 
 function App() {
   return (
     <div >
-      <Logo/>
+      <NavBar/>
       <Routes>
         <Route path = '/' element = {<Body />} />
         <Route path = '/beefPage' element = {<BeefPage />} />

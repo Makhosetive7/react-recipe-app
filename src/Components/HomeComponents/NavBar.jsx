@@ -1,188 +1,207 @@
-import React from 'react'
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { MdMenu, MdClose } from "react-icons/md";
 
 const NavBar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setVisible] = useState(false);
+
+  const handleNav = () => {
+    setVisible(!isVisible);
+  };
+
+  const handleLinkClick = () => {
+    setVisible(false); // Close small screen navigation after clicking a link
+  };
+
   return (
-    <Nav>
-    <Hamburger onClick={() => setIsOpen(!isOpen)}>
-      <span />
-      <span />
-      <span />
-    </Hamburger>
-    <Menu isOpen={isOpen}>
-         <div>
-            <h1>
-              <NavLink to="/">Food Recipe WebApp</NavLink>
-            </h1>
-        </div>
-        
-        <div>
-          <ul class="nav">
-              <li>
-                <NavLink to="beefpage">
-                <span>Beef</span>
-                  <div class = "emoji">&#127830;</div>
-                  </NavLink>
-              </li>
+    <Container>
+      <div className="logo">
+        <p>
+          <NavLink to="/">
+            <code>&lt;/&gt;</code>
+          </NavLink>
+        </p>
+      </div>
+      <div className={`links ${isVisible ? "active" : ""}`}>
+        <ul>
+          <li>
+            <NavLink
+              to="beefpage"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Beef
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="chickenpage"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Chicken
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              NavLink
+              to="favorites"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Favourites
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="cocktailpage"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Cocktails
+            </NavLink>
+          </li>
+        </ul>
+      </div>
 
-              <li>
-                <NavLink to="chickenpage">
-                <span>Chicken</span>
-                  <div class = "emoji">&#127831;</div>
-                  </NavLink>
-              </li>
+      <button className="toggle" onClick={handleNav}>
+        {isVisible ? <MdClose /> : <MdMenu />}
+      </button>
+      {isVisible && (
+        <div className="smallScreen">
+          <button className="close" onClick={handleNav}>
+            <MdClose />
+          </button>
 
-              <li>
-                <NavLink to="cocktailpage">
-                <span>Cocktails</span>
-                  <div class = "emoji">&#129346;</div>
-                  </NavLink>
-              </li>
-              
-              <li>
-                <NavLink to="favorites">
-                <span>Favorites</span>
-                  <div class = "emoji">&#128159;</div>
-                  </NavLink>
-              </li>
-              <div class="background"></div>
+          <ul>
+            <li>
+              <NavLink
+                to="/"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/projects"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Projects
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </div>
-          
+      )}
+    </Container>
+  );
+};
 
-      
-    
-    </Menu>
-  </Nav>
-  )
-}
-
-const Nav = styled.div`
-  border-bottom: 2px solid red;
-  background-color: whitesmoke;
-
-  ul{  
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-}
- 
-  .active{
-    color: red;
-
-  }
-
-`;
-
-const Menu = styled.div`
-  display: block;
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
   width: 100%;
-
-  h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    a{
+  background-color: #c4b0ff;
+  font-family: Rajdhani;
+  .logo {
+    padding-left: 2rem;
+    font-weight: 900;
+    font-size: 2rem;
+    a {
       text-decoration: none;
-      font-size: 2.5rem;
-      padding-top: 1rem;
+      color: #88fff7;
     }
   }
 
-    .background {
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-    transition: .75s;
+  .links {
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        margin: 0 1rem;
+        a {
+          text-decoration: none;
+          color: white;
+          &.active {
+            font-weight: 900;
+            color: #88fff7;
+          }
+        }
+      }
+    }
   }
 
-  ul{  
-    list-style-type: none;
-  }
-
-  li a{ 
-    padding: 30px;
-    float:left;
-    width: 100px;
-    text-align:center;
+  .toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
     font-size: 1.5rem;
-    font-weight: bold;
-    font-family: 'Rajdhani', sans-serif;
-    color: black;
-    text-decoration:none;
+    color: #c3edc0;
+    margin-right: 1rem;
   }
 
-  
-  li span{
-    height: 50px;
-  }
-
-  li a:hover span {
-    transform: translateY(-10px);
-  }
-
-  li a .emoji{
-    font-size:0px;
-  }
-
-  li a:hover .emoji {
-    transform: translateY(10px);
-    font-size: 2.5rem;
-    transition: .5s;
-  }
-        
-  li a.emoji:hover{
-    transform: translateY(-10px);
-  }
-
-  @keyframes illuminate {
-    0% {
-      transform: scale(.7, .7);
-      opacity: 0.7;
-    }
-    50% {
-      opacity: 0.3;
-    }
-    100%{
-      transform: scale(1.15);
-      opacity: 0;
-    }
-  }
-
-  @media (max-width: 900px) {
-    overflow: hidden;
-    flex-direction: column;
-    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-    transition: max-height 0.3s ease-in;
+  .smallScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 100%;
-    
+    background-color: #114232;
+    padding-top: 4rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      li {
+        margin-bottom: 1rem;
+        a {
+          text-decoration: none;
+          color: #88fff7;
+          font-size: 1.5rem;
+          font-weight: 900;
+          font-family: "Platypi", serif;
+        }
+      }
+    }
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #c3edc0;
+      font-weight: 900;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .links {
+      display: none;
+    }
+    .toggle {
+      display: block;
+    }
   }
 `;
 
-const Hamburger = styled.div`
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 7vh;
-  cursor: pointer;
-  span {
-    height: 5px;
-    width: 35px;
-    background: red;
-    margin-bottom: 4px;
-    border-radius: 5px;
-  }
-  @media (max-width: 900px) {
-    display: flex;
-  }
-`;
-
-export default NavBar
+export default NavBar;

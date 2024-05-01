@@ -12,34 +12,21 @@ const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category}) =>
       <article class="card">
         <div class="image">
           <img src={imageurl} alt="" />
-          <p class="note">{title} || {typeOfGlass} meal</p>
         </div>
         <div class="card__content">
-          <h3>Mixing Instuctions</h3>
+        <p class="note">{title} || {typeOfGlass} meal</p>
+          <h4>Mixing Instuctions</h4>
           <p>
             {instructions.substring(0, 500)}
             <span>....read more</span>
           </p>
-          <h3 class="label">Share meal on:</h3>
-          <div className="media">
-            <ul>
-              <li>
-                <FiTwitter />
-              </li>
-              <li>
-                <AiOutlineWhatsApp />
-              </li>
-              <li>
-                <FaInstagram />
-              </li>
-            </ul>
-          </div>
         </div>
       </article>
     </Container>
     
   )
 }
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -47,12 +34,16 @@ const Container = styled.div`
   flex-direction: column;
 
   article {
-    width: 90%;
-    border: 1px solid pink;
+    width: 20rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: #c4b0ff;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 800px) {
+      margin-bottom: 1rem;
+    }
+
 
     .card__content {
       padding-left: 1rem;
@@ -65,6 +56,7 @@ const Container = styled.div`
         color: white;
         font-weight: bold;
         font-style: italic;
+        font-size: 10px;
       }
     }
 
@@ -79,8 +71,8 @@ const Container = styled.div`
     .image {
       img {
         width: 100%;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        height: 15rem;
+        object-fit: cover;
       }
       p {
         font-family: Rajdhani;
@@ -92,10 +84,5 @@ const Container = styled.div`
     }
   }
 `;
-
-
-
-
-
 
 export default CockTailCards

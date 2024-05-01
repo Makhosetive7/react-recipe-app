@@ -25,9 +25,6 @@ const ChickenPage = () => {
 
   return (
     <Container>
-      <div className="filters">
-        <Filters />
-      </div>
       <div className="chickens_page_mapping">
         {chicken &&
           chicken.map((chickens, index) => {
@@ -52,6 +49,7 @@ const ChickenPage = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
   .chickens_page_mapping {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

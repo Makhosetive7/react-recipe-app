@@ -24,9 +24,6 @@ const CockTailPage = () => {
 
   return (
     <Container>
-      <div className="filters">
-        <Filters />
-      </div>
       <div className="cocktails_page_mapping">
         {alcoholic &&
           alcoholic.map((cocktail, index) => {
@@ -51,6 +48,7 @@ const CockTailPage = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 100px;
   .cocktails_page_mapping {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
