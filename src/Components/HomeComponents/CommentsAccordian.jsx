@@ -26,13 +26,11 @@ const CommentsAccordian = () => {
 const Container = styled.div`
   .header {
     h2 {
-     
       font-family: Rajdhani;
     }
   }
   .accordion {
     margin: 2rem;
-    box-shadow: 0 4px 8px 0 rgba(8, 7, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
 

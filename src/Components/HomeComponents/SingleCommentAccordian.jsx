@@ -11,7 +11,7 @@ const SingleCommentAccordian = ({ title, content, image }) => {
     <Container>
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
         <div className="user">
-          <p>{title}</p>
+          <h2>{title}</h2>
           <img src={image} alt="/" />
         </div>
         <div>
@@ -39,16 +39,17 @@ const Container = styled.div`
     height: 5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: red;
-
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    margin: 1rem;
     .user {
       display: flex;
       justify-content: center;
       align-items: center;
-      p{
-        color: #c4b0ff;
-        font-weight: bold;
-        padding-right: 1rem;
+      flex-direction: column-reverse;
+      h2 {
+        font-family: Rajdhani;
+        font-size: 1.5rem;
       }
 
       img {
