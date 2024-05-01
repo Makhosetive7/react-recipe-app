@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CockTailCards from "./CockTailCards";
-import Filters from "../Components/HomeComponents/Filters";
 import { useNavigate } from "react-router-dom";
 
 const CockTailPage = () => {

@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { FiTwitter } from "react-icons/fi";
-import { AiOutlineWhatsApp } from "react-icons/ai";
-import { FaInstagram } from "react-icons/fa";
 
 const ChickenCards = ({
   imageurl,

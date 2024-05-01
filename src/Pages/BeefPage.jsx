@@ -2,9 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
 import BeefCards from "./BeefCards";
-import Filters from "../Components/HomeComponents/Filters";
 
 const BeefPage = () => {
   const [beef, setBeef] = useState([]);
