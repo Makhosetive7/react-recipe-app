@@ -18,9 +18,7 @@ const NavBar = () => {
     <Container>
       <div className="logo">
         <p>
-          <NavLink to="/">
-            <code>&lt;/&gt;</code>
-          </NavLink>
+          <NavLink to="/">&#127815;</NavLink>
         </p>
       </div>
       <div className={`links ${isVisible ? "active" : ""}`}>
@@ -73,33 +71,42 @@ const NavBar = () => {
           <button className="close" onClick={handleNav}>
             <MdClose />
           </button>
-
           <ul>
             <li>
               <NavLink
-                to="/"
+                to="beefpage"
                 activeClassName="active"
                 onClick={handleLinkClick}
               >
-                Home
+                Beef
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/projects"
+                to="chickenpage"
                 activeClassName="active"
                 onClick={handleLinkClick}
               >
-                Projects
+                Chicken
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/contact"
+                NavLink
+                to="favorites"
                 activeClassName="active"
                 onClick={handleLinkClick}
               >
-                Contact
+                Favourites
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="cocktailpage"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Cocktails
               </NavLink>
             </li>
           </ul>
@@ -123,10 +130,9 @@ const Container = styled.div`
   .logo {
     padding-left: 2rem;
     font-weight: 900;
-    font-size: 2rem;
     a {
       text-decoration: none;
-      color: #88fff7;
+      font-size: 2rem;
     }
   }
 
@@ -164,7 +170,8 @@ const Container = styled.div`
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #114232;
+    box-shadow: inset 120px 100px 250px #000000,
+      inset -120px -100px 250px #000000;
     padding-top: 4rem;
     ul {
       list-style: none;
@@ -174,7 +181,7 @@ const Container = styled.div`
         margin-bottom: 1rem;
         a {
           text-decoration: none;
-          color: #88fff7;
+          color: #c4b0ff;
           font-size: 1.5rem;
           font-weight: 900;
           font-family: "Platypi", serif;
