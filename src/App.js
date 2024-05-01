@@ -1,15 +1,13 @@
 import './App.css';
-import Body from './Components/Body'
-import BeefPage from './Pages/BeefPage'
-import ChickenPage from './Pages/ChickenPage'
-import CockTailPage from './Pages/CockTailPage'
-import Favorites from './Pages/Favorites'
-import MealRecipeInfo from './Pages/MealRecipeInfo'
-import DrinkRecipeInfo from './Pages/DrinkRecipeInfo'
-import Searched from './Pages/Searched';
-//import NavBar from './Components/HomeComponents/NavBar'
+import Body from './Body'
+import BeefPage from './Pages/beef/BeefPage'
+import ChickenPage from './Pages/chicken/ChickenPage'
+import CockTailPage from './Pages/cocktail/CockTailPage'
+import Favorites from './Pages/favorites/Favorites'
+import MealRecipeInfo from './Pages/global/MealRecipeInfo'
+import DrinkRecipeInfo from './Pages/global/DrinkRecipeInfo'
+import Searched from './Pages/global/Searched';
 import { Routes, Route } from 'react-router-dom'
-import Logo from './Components/HomeComponents/Logo';
 import NavBar from './Components/HomeComponents/NavBar';
 
 

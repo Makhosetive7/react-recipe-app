@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import BeefCards from "./BeefCards";
+import { useModal } from "../../Context/modalContext";
 
 const BeefPage = () => {
+  const {openModal} = useModal()
+
   const [beef, setBeef] = useState([]);
   let navigate = useNavigate();
 
@@ -27,8 +30,9 @@ const BeefPage = () => {
       {beef &&
         beef.map((beefs) => {
           return (
-            <div onClick={() => navigate(`/${beefs.idMeal}`)}>
+            <div >
               <BeefCards
+              onClick={openModal}
                 key={beefs.idMeal}
                 imageurl={beefs.strMealThumb}
                 title={beefs.strMeal}

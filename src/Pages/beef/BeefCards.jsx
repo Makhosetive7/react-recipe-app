@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 
-const BeefCards = ({ imageurl, instructions, area, category,dish, title }) => {
+const BeefCards = ({ imageurl, instructions, area, category,dish, title, onClick }) => {
   return (
      <Container>
-    <article class="card">
+    <article class="card" onClick={onClick}>
       <div class="image">
         <img src={imageurl} alt="" />
       </div>
@@ -16,7 +16,7 @@ const BeefCards = ({ imageurl, instructions, area, category,dish, title }) => {
         <h4>Cooking Instuctions</h4>
         <p>
           {instructions.substring(0, 100)}
-          <span>....read more</span>
+          <span>....read moreeeeeee</span>
         </p>
       </div>
     </article>
