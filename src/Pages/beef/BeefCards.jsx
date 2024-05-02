@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
+const BeefCards = ({ imageurl, instructions, area, dish, title, onClick }) => {
 
-const BeefCards = ({ imageurl, instructions, area, category,dish, title, onClick }) => {
+  const handleCardClick = () => {
+    onClick(); // Call the onClick function passed as a prop
+    console.log("clicked!!!");
+  };
+
   return (
-     <Container>
-    <article class="card" onClick={onClick}>
-      <div class="image">
-        <img src={imageurl} alt="" />
-      </div>
-      <div class="card__content">
-      <p class="note">
-          {dish} || {area} meal
-        </p>
-        <h4>Cooking Instuctions</h4>
-        <p>
-          {instructions.substring(0, 100)}
-          <span>....read moreeeeeee</span>
-        </p>
-      </div>
-    </article>
-  </Container>
+    <Container>
+      <article class="card" onClick={handleCardClick}>
+        <div class="image">
+          <img src={imageurl} alt="" />
+          <p class="note">
+            {dish} || {area} meal
+          </p>
+        </div>
+        <div class="card__content">
+          <h4>Cooking Instuctions</h4>
+          <p>{instructions.substring(0, 100)}</p>
+        </div>
+      </article>
+    </Container>
   );
 };
 
