@@ -8,10 +8,15 @@ const ChickenCards = ({
   category,
   dish,
   title,
+  id,
+  onClick
 }) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
   return (
     <Container>
-    <article class="card">
+    <article class="card" onClick={handleCardClick}>
       <div class="image">
         <img src={imageurl} alt="" />
       </div>

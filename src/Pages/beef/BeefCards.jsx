@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const BeefCards = ({ imageurl, instructions, area, dish, title, onClick }) => {
-
+const BeefCards = ({ imageurl, instructions, area, dish, title, id, onClick }) => {
   const handleCardClick = () => {
-    onClick(); // Call the onClick function passed as a prop
-    console.log("clicked!!!");
+    onClick(id);
   };
 
   return (
@@ -18,14 +16,13 @@ const BeefCards = ({ imageurl, instructions, area, dish, title, onClick }) => {
           </p>
         </div>
         <div class="card__content">
-          <h4>Cooking Instuctions</h4>
+          <h4>Cooking Instructions</h4>
           <p>{instructions.substring(0, 100)}</p>
         </div>
       </article>
     </Container>
   );
 };
-
 const Container = styled.div`
   display: flex;
   justify-content: center;

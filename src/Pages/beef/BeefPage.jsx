@@ -6,6 +6,7 @@ import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
 const BeefPage = () => {
   const [beef, setBeef] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedRecipeId, setSelectedRecipeId] = useState();
 
   useEffect(() => {
     getBeef();
@@ -20,12 +21,9 @@ const BeefPage = () => {
     setBeef(data.meals);
   };
 
-  const openModal = () => {
+  const openModal = (id) => {
     setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
+    setSelectedRecipeId(id);
   };
 
   return (
@@ -40,15 +38,17 @@ const BeefPage = () => {
                 area={beefs.strArea}
                 dish={beefs.strCategory}
                 instructions={beefs.strInstructions}
-                onClick={() => openModal(`/${beefs.idMeal}`)}
+                id={beefs.idMeal}
+                onClick={() => openModal(beefs.idMeal)} 
               />
             </div>
           ))}
       </div>
-      {isOpen && <RecipeDetailsModal />}
+      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
     </Container>
   );
 };
+
 
 const Container = styled.div`
 display: flex;

@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category}) => {
-
+const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category, id, onClick}) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
   return (
     <Container>
-      <article class="card">
+      <article class="card" onClick={handleCardClick}>
         <div class="image">
           <img src={imageurl} alt="" />
         </div>
@@ -14,7 +16,6 @@ const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category}) =>
           <h4>Mixing Instuctions</h4>
           <p>
             {instructions.substring(0, 500)}
-            <span>....read more</span>
           </p>
         </div>
       </article>
