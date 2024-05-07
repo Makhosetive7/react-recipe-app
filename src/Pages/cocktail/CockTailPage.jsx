@@ -2,12 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CockTailCards from "./CockTailCards";
-import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
+import CocktailsDetailsModal from "../../Modals/CocktailsDetailsModal";
 
 const CockTailPage = () => {
   const [alcoholic, setAlcoholic] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const [selectedcocktailId, setSelectedcocktailId] = useState();
 
   useEffect(() => {
     getAlcoholic();
@@ -23,7 +23,7 @@ const CockTailPage = () => {
   };
   const openModal = (id) => {
     setIsOpen(true);
-    setSelectedRecipeId(id);
+    setSelectedcocktailId(id);
   };
 
   return (
@@ -47,7 +47,7 @@ const CockTailPage = () => {
             );
           })}
       </div>
-      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
+      {isOpen && <CocktailsDetailsModal recipeId={selectedcocktailId} />}
     </Container>
   );
 };

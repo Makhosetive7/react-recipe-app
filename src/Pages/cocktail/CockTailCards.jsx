@@ -15,7 +15,7 @@ const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category, id,
         <p class="note">{title} || {typeOfGlass} meal</p>
           <h4>Mixing Instuctions</h4>
           <p>
-            {instructions.substring(0, 500)}
+            {instructions.substring(0, 50)}
           </p>
         </div>
       </article>

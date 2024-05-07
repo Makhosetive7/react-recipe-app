@@ -27,7 +27,6 @@ const ChickenCards = ({
         <h4>Cooking Instuctions</h4>
         <p>
           {instructions.substring(0, 100)}
-          <span>....read more</span>
         </p>
       </div>
     </article>
