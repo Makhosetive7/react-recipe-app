@@ -1,26 +1,33 @@
 import React from "react";
 import styled from "styled-components";
+const PopularBeefRecipes = ({
+  imageurl,
+  dish,
+  area,
+  category,
+  instructions,
+  id,
+  onClick,
+}) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
 
-
-const BeefCards = ({ imageurl, instructions, area, category,dish, title }) => {
   return (
-     <Container>
-    <article class="card">
-      <div class="image">
-        <img src={imageurl} alt="" />
-      </div>
-      <div class="card__content">
-      <p class="note">
-          {dish} || {area} meal
-        </p>
-        <h4>Cooking Instuctions</h4>
-        <p>
-          {instructions.substring(0, 100)}
-          <span>....read more</span>
-        </p>
-      </div>
-    </article>
-  </Container>
+    <Container>
+      <article class="card" onClick={handleCardClick}>
+        <div class="image">
+          <img src={imageurl} alt="" />
+        </div>
+        <div class="card__content">
+          <p class="note">
+            {dish} || {area} meal
+          </p>
+          <h4>Cooking Instuctions</h4>
+          <p>{instructions.substring(0, 100)}</p>
+        </div>
+      </article>
+    </Container>
   );
 };
 
@@ -35,12 +42,10 @@ const Container = styled.div`
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: #c4b0ff;
-    margin-bottom: 1rem;
 
     @media screen and (max-width: 800px) {
       margin-bottom: 1rem;
     }
-
 
     .card__content {
       padding-left: 1rem;
@@ -48,12 +53,6 @@ const Container = styled.div`
       font-family: Rajdhani;
       h3 {
         letter-spacing: 2px;
-      }
-      span {
-        color: white;
-        font-weight: bold;
-        font-style: italic;
-        font-size: 10px;
       }
     }
 
@@ -82,4 +81,4 @@ const Container = styled.div`
   }
 `;
 
-export default BeefCards;
+export default PopularBeefRecipes;

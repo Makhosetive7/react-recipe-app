@@ -1,13 +1,8 @@
 import './App.css';
-import Body from './Components/Body'
-import BeefPage from './Pages/BeefPage'
-import ChickenPage from './Pages/ChickenPage'
-import CockTailPage from './Pages/CockTailPage'
-import Favorites from './Pages/Favorites'
-import MealRecipeInfo from './Pages/MealRecipeInfo'
-import DrinkRecipeInfo from './Pages/DrinkRecipeInfo'
-import Searched from './Pages/Searched';
-//import NavBar from './Components/HomeComponents/NavBar'
+import Body from './Body'
+import BeefPage from './Pages/beef/BeefPage'
+import ChickenPage from './Pages/chicken/ChickenPage'
+import CockTailPage from './Pages/cocktail/CockTailPage'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './Components/HomeComponents/NavBar';
 
@@ -22,10 +17,6 @@ function App() {
         <Route path = '/beefPage' element = {<BeefPage />} />
         <Route path = '/chickenpage' element ={<ChickenPage />} />
         <Route path = '/cocktailPage' element ={<CockTailPage/>} />
-        <Route path = '/favorites' element ={<Favorites/>} />
-        <Route exact path="/:mealrecipeId" element={<MealRecipeInfo/>}/>
-        <Route exact path="/:drinkrecipeId" element={<DrinkRecipeInfo/>} />
-        <Route path ='/searched/ :search' element={<Searched />}  />
       </Routes>
 
 

@@ -1,28 +1,28 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category}) => {
+const BeefCards = ({ imageurl, instructions, area, dish, title, id, onClick }) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
 
   return (
     <Container>
-      <article class="card">
+      <article class="card" onClick={handleCardClick}>
         <div class="image">
           <img src={imageurl} alt="" />
+          <p class="note">
+            {dish} || {area} meal
+          </p>
         </div>
         <div class="card__content">
-        <p class="note">{title} || {typeOfGlass} meal</p>
-          <h4>Mixing Instuctions</h4>
-          <p>
-            {instructions.substring(0, 500)}
-            <span>....read more</span>
-          </p>
+          <h4>Cooking Instructions</h4>
+          <p>{instructions.substring(0, 100)}</p>
         </div>
       </article>
     </Container>
-    
-  )
-}
-
+  );
+};
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -81,4 +81,4 @@ const Container = styled.div`
   }
 `;
 
-export default CockTailCards
+export default BeefCards;

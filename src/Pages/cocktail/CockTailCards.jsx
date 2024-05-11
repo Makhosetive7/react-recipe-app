@@ -1,32 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-const PopularBeefRecipes = ({
-  imageurl,
-  dish,
-  area,
-  category,
-  instructions,
-}) => {
+const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category, id, onClick}) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
   return (
     <Container>
-      <article class="card">
+      <article class="card" onClick={handleCardClick}>
         <div class="image">
           <img src={imageurl} alt="" />
         </div>
         <div class="card__content">
-        <p class="note">
-            {dish} || {area} meal
-          </p>
-          <h4>Cooking Instuctions</h4>
+        <p class="note">{title} || {typeOfGlass} meal</p>
+          <h4>Mixing Instuctions</h4>
           <p>
-            {instructions.substring(0, 100)}
+            {instructions.substring(0, 50)}
           </p>
         </div>
       </article>
     </Container>
-  );
-};
+    
+  )
+}
 
 const Container = styled.div`
   display: flex;
@@ -39,6 +35,7 @@ const Container = styled.div`
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: #c4b0ff;
+    margin-bottom: 1rem;
 
     @media screen and (max-width: 800px) {
       margin-bottom: 1rem;
@@ -51,6 +48,12 @@ const Container = styled.div`
       font-family: Rajdhani;
       h3 {
         letter-spacing: 2px;
+      }
+      span {
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 10px;
       }
     }
 
@@ -79,4 +82,4 @@ const Container = styled.div`
   }
 `;
 
-export default PopularBeefRecipes;
+export default CockTailCards

@@ -2,11 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CockTailCards from "./CockTailCards";
-import { useNavigate } from "react-router-dom";
+import CocktailsDetailsModal from "../../Modals/CocktailsDetailsModal";
 
 const CockTailPage = () => {
-  const navigate = useNavigate()
   const [alcoholic, setAlcoholic] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedcocktailId, setSelectedcocktailId] = useState();
+ 
 
   useEffect(() => {
     getAlcoholic();
@@ -20,6 +22,10 @@ const CockTailPage = () => {
     console.log(data);
     setAlcoholic(data.drinks);
   };
+  const openModal = (id) => {
+    setIsOpen(true);
+    setSelectedcocktailId(id);
+  };
 
   return (
     <Container>
@@ -27,7 +33,7 @@ const CockTailPage = () => {
         {alcoholic &&
           alcoholic.map((cocktail, index) => {
             return (
-              <div onClick = {() => (navigate(`/${cocktail.idDrink}`))}>
+              <div key={cocktail.idDrink}>
                 <CockTailCards
                   key={index}
                   imageurl={cocktail.strDrinkThumb}
@@ -35,11 +41,14 @@ const CockTailPage = () => {
                   typeOfGlass={cocktail.strGlass}
                   category={cocktail.strCategory}
                   instructions={cocktail.strInstructions}
+                  id={cocktail.idDrink}
+                  onClick={() => openModal(cocktail.idDrink)}
                 />
               </div>
             );
           })}
       </div>
+      {isOpen && <CocktailsDetailsModal recipeId={selectedcocktailId} />}
     </Container>
   );
 };

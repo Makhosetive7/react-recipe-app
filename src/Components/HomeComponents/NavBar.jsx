@@ -43,16 +43,6 @@ const NavBar = () => {
           </li>
           <li>
             <NavLink
-              NavLink
-              to="favorites"
-              activeClassName="active"
-              onClick={handleLinkClick}
-            >
-              Favourites
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="cocktailpage"
               activeClassName="active"
               onClick={handleLinkClick}
@@ -88,16 +78,6 @@ const NavBar = () => {
                 onClick={handleLinkClick}
               >
                 Chicken
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                NavLink
-                to="favorites"
-                activeClassName="active"
-                onClick={handleLinkClick}
-              >
-                Favourites
               </NavLink>
             </li>
             <li>
@@ -147,7 +127,7 @@ const Container = styled.div`
           color: white;
           &.active {
             font-weight: 900;
-            color: #88fff7;
+            color: black;
           }
         }
       }

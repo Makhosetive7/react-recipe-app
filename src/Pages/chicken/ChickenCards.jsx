@@ -8,10 +8,15 @@ const ChickenCards = ({
   category,
   dish,
   title,
+  id,
+  onClick
 }) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
   return (
     <Container>
-    <article class="card">
+    <article class="card" onClick={handleCardClick}>
       <div class="image">
         <img src={imageurl} alt="" />
       </div>
@@ -22,7 +27,6 @@ const ChickenCards = ({
         <h4>Cooking Instuctions</h4>
         <p>
           {instructions.substring(0, 100)}
-          <span>....read more</span>
         </p>
       </div>
     </article>

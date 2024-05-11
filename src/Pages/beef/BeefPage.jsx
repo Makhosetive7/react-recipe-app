@@ -1,12 +1,12 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import BeefCards from "./BeefCards";
+import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
 
 const BeefPage = () => {
   const [beef, setBeef] = useState([]);
-  let navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedRecipeId, setSelectedRecipeId] = useState();
 
   useEffect(() => {
     getBeef();
@@ -21,28 +21,34 @@ const BeefPage = () => {
     setBeef(data.meals);
   };
 
+  const openModal = (id) => {
+    setIsOpen(true);
+    setSelectedRecipeId(id);
+  };
+
   return (
     <Container>
       <div className="beef_page_mapping">
-      {beef &&
-        beef.map((beefs) => {
-          return (
-            <div onClick={() => navigate(`/${beefs.idMeal}`)}>
+        {beef &&
+          beef.map((beefs) => (
+            <div key={beefs.idMeal}>
               <BeefCards
-                key={beefs.idMeal}
                 imageurl={beefs.strMealThumb}
                 title={beefs.strMeal}
                 area={beefs.strArea}
-                category={beefs.strCategory}
+                dish={beefs.strCategory}
                 instructions={beefs.strInstructions}
+                id={beefs.idMeal}
+                onClick={() => openModal(beefs.idMeal)} 
               />
             </div>
-          );
-        })}
+          ))}
       </div>
+      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
     </Container>
   );
 };
+
 
 const Container = styled.div`
 display: flex;
