@@ -6,30 +6,18 @@ import { useParams } from "react-router-dom";
 import {
   MdDriveFileRenameOutline,
   MdOutlineCategory,
-  MdWineBar
+  MdWineBar,
 } from "react-icons/md";
 
 const CocktailsDetailsModal = ({ recipeId }) => {
   const { closeModal } = useModal();
-
-  const handleClose = () => {
-    closeModal();
-  };
-
-  useEffect(() => {
-    // Prevent scrolling when modal is open
-    document.body.style.overflow = "hidden";
-
-    // Re-enable scrolling when modal is closed
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [closeModal]);
-
   const [item, setItem] = useState();
   const [activeTab, setActiveTab] = useState("Instructions");
-  const { mealrecipeId } = useParams();
-  if (mealrecipeId !== " ") {
+  const { cocktailrecipeId } = useParams();
+  
+
+  //fetching details of selected cocktail
+  if (cocktailrecipeId !== " ") {
     fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${recipeId}`
     )
@@ -39,6 +27,20 @@ const CocktailsDetailsModal = ({ recipeId }) => {
         setItem(data.drinks[0]);
       });
   }
+  //modal handling
+  const handleClose = () => {
+    console.log("Closing modal...");
+    closeModal();
+  };
+  
+
+  //prevent scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [closeModal]);
 
   return (
     <WrapperContainer>
@@ -70,7 +72,7 @@ const CocktailsDetailsModal = ({ recipeId }) => {
               </h2>
               <h2>
                 <span>
-                <MdWineBar />
+                  <MdWineBar />
                 </span>{" "}
                 {item.strGlass} <span>used</span>
               </h2>

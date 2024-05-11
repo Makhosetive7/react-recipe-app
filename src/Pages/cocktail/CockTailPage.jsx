@@ -8,6 +8,7 @@ const CockTailPage = () => {
   const [alcoholic, setAlcoholic] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedcocktailId, setSelectedcocktailId] = useState();
+ 
 
   useEffect(() => {
     getAlcoholic();

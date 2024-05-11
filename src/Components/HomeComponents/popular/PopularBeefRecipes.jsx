@@ -1,29 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { FiTwitter } from "react-icons/fi";
-import { AiOutlineWhatsApp } from "react-icons/ai";
-import { FaInstagram } from "react-icons/fa";
 const PopularBeefRecipes = ({
   imageurl,
   dish,
   area,
   category,
   instructions,
+  id,
+  onClick,
 }) => {
+  const handleCardClick = () => {
+    onClick(id);
+  };
+
   return (
     <Container>
-      <article class="card">
+      <article class="card" onClick={handleCardClick}>
         <div class="image">
           <img src={imageurl} alt="" />
         </div>
         <div class="card__content">
-        <p class="note">
+          <p class="note">
             {dish} || {area} meal
           </p>
           <h4>Cooking Instuctions</h4>
-          <p>
-            {instructions.substring(0, 100)}
-          </p>
+          <p>{instructions.substring(0, 100)}</p>
         </div>
       </article>
     </Container>
@@ -45,7 +46,6 @@ const Container = styled.div`
     @media screen and (max-width: 800px) {
       margin-bottom: 1rem;
     }
-
 
     .card__content {
       padding-left: 1rem;

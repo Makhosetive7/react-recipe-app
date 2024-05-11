@@ -11,24 +11,11 @@ import {
 
 const RecipeDetailsModal = ({ recipeId }) => {
   const { closeModal } = useModal();
-
-  const handleClose = () => {
-    closeModal();
-  };
-
-  useEffect(() => {
-    // Prevent scrolling when modal is open
-    document.body.style.overflow = "hidden";
-
-    // Re-enable scrolling when modal is closed
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [closeModal]);
-
   const [item, setItem] = useState();
   const [activeTab, setActiveTab] = useState("Instructions");
   const { mealrecipeId } = useParams();
+
+  //fetching details of selected meal
   if (mealrecipeId !== " ") {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
       .then((res) => res.json())
@@ -38,12 +25,23 @@ const RecipeDetailsModal = ({ recipeId }) => {
       });
   }
 
+  //modal handling
+  const handleClose = () => {
+    closeModal();
+  };
+  //prevent scrolling when modal is open
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [closeModal]);
   return (
     <WrapperContainer>
       <Overlay onClick={handleClose}></Overlay>
       <Container>
         <div className="closeButton">
-          <button onClick={handleClose}>x</button>
+          <button onClick={closeModal}>x</button>
         </div>
         {!item ? (
           <p>Loading recipe details...</p>
@@ -155,8 +153,7 @@ const Container = styled.div`
   width: 70%;
   height: 85vh;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -166,9 +163,9 @@ const Container = styled.div`
   @media screen and (max-width: 768px) {
     width: 90%;
   }
-  .closeButton{
-    margin: .5rem;
-    button{
+  .closeButton {
+    margin: 0.5rem;
+    button {
       border: none;
       background-color: transparent;
       font-size: 16px;

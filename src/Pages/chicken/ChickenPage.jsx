@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChickenCards from "./ChickenCards";
 import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
@@ -28,6 +26,10 @@ const ChickenPage = () => {
     setSelectedRecipeId(id);
   };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <Container>
       <div className="chickens_page_mapping">
@@ -49,7 +51,7 @@ const ChickenPage = () => {
             );
           })}
       </div>
-      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
+      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} closeModal={closeModal} />}
     </Container>
   );
 };
