@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import { FaArrowAltCircleDown } from "react-icons/fa";
-import { FaArrowAltCircleUp } from "react-icons/fa";
+import { MdArrowDownward,MdArrowUpward  } from "react-icons/md";
 
 const SingleCommentAccordian = ({ title, content, image }) => {
   const [isActive, setIsActive] = useState(false);
@@ -15,7 +14,7 @@ const SingleCommentAccordian = ({ title, content, image }) => {
           <img src={image} alt="/" />
         </div>
         <div>
-          {isActive ? <FaArrowAltCircleUp /> : <FaArrowAltCircleDown />}
+          {isActive ? <MdArrowUpward  /> : <MdArrowDownward />}
         </div>
       </div>
 
@@ -39,15 +38,14 @@ const Container = styled.div`
     height: 5rem;
     font-size: 1.5rem;
     cursor: pointer;
-    color: red;
+    color:  #c4b0ff;
 
     .user {
       display: flex;
       justify-content: center;
       align-items: center;
       p{
-        color: #c4b0ff;
-        font-weight: bold;
+        font-weight: 300;
         padding-right: 1rem;
       }
 
