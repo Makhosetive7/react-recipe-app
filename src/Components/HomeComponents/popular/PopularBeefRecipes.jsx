@@ -4,7 +4,6 @@ const PopularBeefRecipes = ({
   imageurl,
   dish,
   area,
-  category,
   instructions,
   id,
   onClick,
