@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import BeefCards from "./BeefCards";
 import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
+import { useModal } from "../../Context/modalContext";
 
 const BeefPage = () => {
   const [beef, setBeef] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const { isOpen, openModal, closeModal } = useModal();
 
   useEffect(() => {
     getBeef();
@@ -21,9 +22,9 @@ const BeefPage = () => {
     setBeef(data.meals);
   };
 
-  const openModal = (id) => {
-    setIsOpen(true);
+  const handleOpenModal = (id) => {
     setSelectedRecipeId(id);
+    openModal();
   };
 
   return (
@@ -39,12 +40,12 @@ const BeefPage = () => {
                 dish={beefs.strCategory}
                 instructions={beefs.strInstructions}
                 id={beefs.idMeal}
-                onClick={() => openModal(beefs.idMeal)} 
+                onClick={() => handleOpenModal(beefs.idMeal)} 
               />
             </div>
           ))}
       </div>
-      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
+      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId}  onClose={closeModal} />}
     </Container>
   );
 };

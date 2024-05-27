@@ -1,17 +1,17 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PopularBeefRecipes from "./PopularBeefRecipes";
 import RecipeDetailsModal from "../../../Modals/RecipeDetailsModal";
+import { useModal } from "../../../Context/modalContext";
 
 const PopularBeefRecipe = () => {
   const [recipe, setRecipe] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const { isOpen, openModal, closeModal } = useModal();
 
   useEffect(() => {
     getPopular();
-  }, [recipe]);
+  }, []);
 
   const getPopular = async () => {
     const Api = await fetch(
@@ -22,36 +22,35 @@ const PopularBeefRecipe = () => {
     setRecipe(data.meals.slice(0, 3));
   };
 
-  const openModal = (id) => {
-    setIsOpen(true);
+  const handleOpenModal = (id) => {
     setSelectedRecipeId(id);
+    openModal();
   };
 
   return (
     <Container>
       <div className="heading">
-        <h2>Random Pupolar Beef Meals</h2>
+        <h2>Random Popular Beef Meals</h2>
       </div>
-        <div className="mapping_recipes">
-          {recipe &&
-            recipe.map((recipes, index) => {
-              return (
-                <div key={recipe.idMeal}>
-                  <PopularBeefRecipes
-                    key={index}
-                    imageurl={recipes.strMealThumb}
-                    dish={recipes.strMeal}
-                    area={recipes.strArea}
-                    category={recipes.strCategory}
-                    instructions={recipes.strInstructions}
-                    id={recipes.idMeal}
-                    onClick={() => openModal(recipes.idMeal)}
-                  />
-                </div>
-              );
-            })}
-        </div>
-      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} />}
+      <div className="mapping_recipes">
+        {recipe &&
+          recipe.map((recipes) => {
+            return (
+              <div key={recipes.idMeal}>
+                <PopularBeefRecipes
+                  imageurl={recipes.strMealThumb}
+                  dish={recipes.strMeal}
+                  area={recipes.strArea}
+                  category={recipes.strCategory}
+                  instructions={recipes.strInstructions}
+                  id={recipes.idMeal}
+                  onClick={() => handleOpenModal(recipes.idMeal)}
+                />
+              </div>
+            );
+          })}
+      </div>
+      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId} onClose={closeModal} />}
     </Container>
   );
 };

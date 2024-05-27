@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CockTailCards from "./CockTailCards";
 import CocktailsDetailsModal from "../../Modals/CocktailsDetailsModal";
+import { useModal } from "../../Context/modalContext"; 
 
 const CockTailPage = () => {
-  const [alcoholic, setAlcoholic] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [alcoholic, setAlcoholic] = useState([]);;
   const [selectedcocktailId, setSelectedcocktailId] = useState();
+  const { isOpen, openModal, closeModal } = useModal();
  
 
   useEffect(() => {
     getAlcoholic();
   }, []);
+  
 
   const getAlcoholic = async () => {
     const API = await fetch(
@@ -22,9 +24,9 @@ const CockTailPage = () => {
     console.log(data);
     setAlcoholic(data.drinks);
   };
-  const openModal = (id) => {
-    setIsOpen(true);
+  const handleOpenModal = (id) => {
     setSelectedcocktailId(id);
+    openModal();
   };
 
   return (
@@ -42,13 +44,13 @@ const CockTailPage = () => {
                   category={cocktail.strCategory}
                   instructions={cocktail.strInstructions}
                   id={cocktail.idDrink}
-                  onClick={() => openModal(cocktail.idDrink)}
+                  onClick={() => handleOpenModal(cocktail.idDrink)}
                 />
               </div>
             );
           })}
       </div>
-      {isOpen && <CocktailsDetailsModal recipeId={selectedcocktailId} />}
+      {isOpen && <CocktailsDetailsModal recipeId={selectedcocktailId} closeModal={closeModal}/>}
     </Container>
   );
 };

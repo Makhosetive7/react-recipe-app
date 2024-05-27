@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChickenCards from "./ChickenCards";
 import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
+import { useModal } from "../../Context/modalContext"; 
 
 const ChickenPage = () => {
   const [chicken, setChicken] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const { isOpen, openModal, closeModal } = useModal();
 
   useEffect(() => {
     getChicken();
@@ -21,13 +22,9 @@ const ChickenPage = () => {
     setChicken(data.meals);
   };
 
-  const openModal = (id) => {
-    setIsOpen(true);
+  const handleOpenModal = (id) => {
     setSelectedRecipeId(id);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
+    openModal();
   };
 
   return (
@@ -45,7 +42,7 @@ const ChickenPage = () => {
                   category={chickens.strCategory}
                   instructions={chickens.strInstructions}
                   id={chickens.idMeal}
-                  onClick={() => openModal(chickens.idMeal)} 
+                  onClick={() => handleOpenModal(chickens.idMeal)} 
                 />
               </div>
             );
