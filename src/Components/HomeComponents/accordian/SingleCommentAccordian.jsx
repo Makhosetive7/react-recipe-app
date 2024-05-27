@@ -10,7 +10,7 @@ const SingleCommentAccordian = ({ title, content, image }) => {
     <Container>
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
         <div className="user">
-          <h2>{title}</h2>
+          <p>{title}</p>
           <img src={image} alt="/" />
         </div>
         <div>
