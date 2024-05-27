@@ -3,9 +3,11 @@ import styled from "styled-components";
 import BeefCards from "./BeefCards";
 import RecipeDetailsModal from "../../Modals/RecipeDetailsModal";
 import { useModal } from "../../Context/modalContext";
+import { Circles } from "react-loader-spinner";
 
 const BeefPage = () => {
   const [beef, setBeef] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [selectedRecipeId, setSelectedRecipeId] = useState();
   const { isOpen, openModal, closeModal } = useModal();
 
@@ -14,12 +16,17 @@ const BeefPage = () => {
   }, []);
 
   const getBeef = async () => {
-    const API = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=Beef`
-    );
-    const data = await API.json();
-    console.log(data);
-    setBeef(data.meals);
+    setLoading(true);
+    try {
+      const API = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=Beef`
+      );
+      const data = await API.json();
+      setBeef(data.meals);
+    } catch (error) {
+      console.error("Error fetching beef recipes:", error);
+    }
+    setLoading(false);
   };
 
   const handleOpenModal = (id) => {
@@ -30,7 +37,22 @@ const BeefPage = () => {
   return (
     <Container>
       <div className="beef_page_mapping">
-        {beef &&
+        {loading ? (
+          <div className="loaders">
+            <span>
+              <Circles
+                height="50"
+                width="50"
+                color="#c4b0ff"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </span>
+          </div>
+        ) : (
+          beef &&
           beef.map((beefs) => (
             <div key={beefs.idMeal}>
               <BeefCards
@@ -40,33 +62,39 @@ const BeefPage = () => {
                 dish={beefs.strCategory}
                 instructions={beefs.strInstructions}
                 id={beefs.idMeal}
-                onClick={() => handleOpenModal(beefs.idMeal)} 
+                onClick={() => handleOpenModal(beefs.idMeal)}
               />
             </div>
-          ))}
+          ))
+        )}
       </div>
-      {isOpen && <RecipeDetailsModal recipeId={selectedRecipeId}  onClose={closeModal} />}
+      {isOpen && (
+        <RecipeDetailsModal recipeId={selectedRecipeId} onClose={closeModal} />
+      )}
     </Container>
   );
 };
 
-
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-padding-top: 100px;
-
-.beef_page_mapping{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  @media screen and (max-width: 900px){
-    grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  .loaders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-  @media screen and (max-width: 600px){
-    grid-template-columns: repeat(1, 1fr);
+  .beef_page_mapping {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
-}
 `;
-
 export default BeefPage;

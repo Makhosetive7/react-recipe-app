@@ -7,7 +7,10 @@ import {
   MdDriveFileRenameOutline,
   MdOutlineCategory,
   MdOutlineAddLocation,
+  MdOutlineClose
 } from "react-icons/md";
+
+import { Circles } from "react-loader-spinner";
 
 const RecipeDetailsModal = ({ recipeId }) => {
   const { closeModal } = useModal();
@@ -15,7 +18,6 @@ const RecipeDetailsModal = ({ recipeId }) => {
   const [activeTab, setActiveTab] = useState("Instructions");
   const { mealrecipeId } = useParams();
 
-  //fetching details of selected meal
   if (mealrecipeId !== " ") {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
       .then((res) => res.json())
@@ -25,26 +27,39 @@ const RecipeDetailsModal = ({ recipeId }) => {
       });
   }
 
-  //modal handling
   const handleClose = () => {
     closeModal();
   };
-  //prevent scrolling when modal is open
+
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [closeModal]);
+
   return (
     <WrapperContainer>
       <Overlay onClick={handleClose}></Overlay>
       <Container>
         <div className="closeButton">
-          <button onClick={closeModal}>x</button>
+          <button onClick={closeModal}><MdOutlineClose/></button>
         </div>
         {!item ? (
-          <p>Loading recipe details...</p>
+          <div className="loaders">
+          <span>
+            <Circles
+              height="50"
+              width="50"
+              color="#c4b0ff"
+              ariaLabel="circles-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            />
+          </span>
+        </div>
         ) : (
           <div className="containerDetails">
             <div className="imageContainer">
@@ -166,10 +181,21 @@ const Container = styled.div`
   .closeButton {
     margin: 0.5rem;
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
       background-color: transparent;
       font-size: 16px;
+      border: 2px solid  #c4b0ff;
+      padding: .5rem;
     }
+  }
+  .loaders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .containerDetails {

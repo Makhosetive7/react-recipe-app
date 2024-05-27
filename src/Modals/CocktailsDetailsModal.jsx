@@ -7,16 +7,16 @@ import {
   MdDriveFileRenameOutline,
   MdOutlineCategory,
   MdWineBar,
+  MdOutlineClose
 } from "react-icons/md";
+import { Circles } from "react-loader-spinner";
 
 const CocktailsDetailsModal = ({ recipeId }) => {
   const { closeModal } = useModal();
   const [item, setItem] = useState();
   const [activeTab, setActiveTab] = useState("Instructions");
   const { cocktailrecipeId } = useParams();
-  
 
-  //fetching details of selected cocktail
   if (cocktailrecipeId !== " ") {
     fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${recipeId}`
@@ -27,14 +27,11 @@ const CocktailsDetailsModal = ({ recipeId }) => {
         setItem(data.drinks[0]);
       });
   }
-  //modal handling
+
   const handleClose = () => {
-    console.log("Closing modal...");
     closeModal();
   };
-  
 
-  //prevent scrolling when modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -47,10 +44,22 @@ const CocktailsDetailsModal = ({ recipeId }) => {
       <Overlay onClick={handleClose}></Overlay>
       <Container>
         <div className="closeButton">
-          <button onClick={handleClose}>x</button>
+          <button onClick={handleClose}><MdOutlineClose/></button>
         </div>
         {!item ? (
-          <p>Loading recipe details...</p>
+          <div className="loaders">
+            <span>
+              <Circles
+                height="50"
+                width="50"
+                color="#c4b0ff"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </span>
+          </div>
         ) : (
           <div className="containerDetails">
             <div className="imageContainer">
@@ -172,10 +181,21 @@ const Container = styled.div`
   .closeButton {
     margin: 0.5rem;
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
       background-color: transparent;
       font-size: 16px;
+      border: 2px solid  #c4b0ff;
+      padding: .5rem;
     }
+  }
+  .loaders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .containerDetails {
