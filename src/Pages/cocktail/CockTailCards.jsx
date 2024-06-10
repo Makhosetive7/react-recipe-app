@@ -7,12 +7,12 @@ const CockTailCards = ({imageurl, typeOfGlass, title,instructions, category, id,
   };
   return (
     <Container>
-      <article class="card" onClick={handleCardClick}>
-        <div class="image">
+      <article className="card" onClick={handleCardClick}>
+        <div className="image">
           <img src={imageurl} alt="" />
         </div>
-        <div class="card__content">
-        <p class="note">{title} || {typeOfGlass} meal</p>
+        <div className="card__content">
+        <p className="note">{title} || {typeOfGlass} meal</p>
           <h4>Mixing Instuctions</h4>
           <p>
             {instructions.substring(0, 50)}

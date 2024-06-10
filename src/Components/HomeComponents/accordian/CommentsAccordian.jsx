@@ -11,8 +11,9 @@ const CommentsAccordian = () => {
         <h2>What People say</h2>
       </div>
       <div className="accordion">
-        {accordionContent.map(({ title, content, image }) => (
+        {accordionContent.map(({ title, content, image, id }) => (
           <SingleCommentAccordian
+            key={id}
             title={title}
             content={content}
             image={image}

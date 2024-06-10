@@ -14,12 +14,12 @@ const PopularBeefRecipes = ({
 
   return (
     <Container>
-      <article class="card" onClick={handleCardClick}>
-        <div class="image">
+      <article className="card" onClick={handleCardClick}>
+        <div className="image">
           <img src={imageurl} alt="" />
         </div>
-        <div class="card__content">
-          <p class="note">
+        <div className="card__content">
+          <p className="note">
             {dish} || {area} meal
           </p>
           <h4>Cooking Instuctions</h4>

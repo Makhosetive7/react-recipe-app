@@ -8,14 +8,14 @@ const BeefCards = ({ imageurl, instructions, area, dish, title, id, onClick }) =
 
   return (
     <Container>
-      <article class="card" onClick={handleCardClick}>
-        <div class="image">
+      <article className="card" onClick={handleCardClick}>
+        <div className="image">
           <img src={imageurl} alt="" />
-          <p class="note">
+          <p className="note">
             {dish} || {area} meal
           </p>
         </div>
-        <div class="card__content">
+        <div className="card__content">
           <h4>Cooking Instructions</h4>
           <p>{instructions.substring(0, 100)}</p>
         </div>
