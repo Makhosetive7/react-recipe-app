@@ -26,7 +26,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="beefpage"
-              activeClassName="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
               onClick={handleLinkClick}
             >
               Beef
@@ -35,7 +35,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="chickenpage"
-              activeClassName="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
               onClick={handleLinkClick}
             >
               Chicken
@@ -44,7 +44,7 @@ const NavBar = () => {
           <li>
             <NavLink
               to="cocktailpage"
-              activeClassName="active"
+              className={({ isActive }) => (isActive ? "active" : "")}
               onClick={handleLinkClick}
             >
               Cocktails
@@ -65,7 +65,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="beefpage"
-                activeClassName="active"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 Beef
@@ -74,7 +74,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="chickenpage"
-                activeClassName="active"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 Chicken
@@ -83,7 +83,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 to="cocktailpage"
-                activeClassName="active"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={handleLinkClick}
               >
                 Cocktails
@@ -150,8 +150,7 @@ const Container = styled.div`
     left: 0;
     height: 100vh;
     width: 100%;
-    box-shadow: inset 120px 100px 250px #000000,
-      inset -120px -100px 250px #000000;
+  background-color: white;
     padding-top: 4rem;
     ul {
       list-style: none;

@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Banner = () => {
   return (
     <Container>
-      <header class="banner">
-        <div class="bannerDetails">
+      <header className="banner">
+        <div className="bannerDetails">
           <h1>Unleash Culinary skills</h1>
           <p>Explore mouthwatering dishes. Cook anytime.</p>
         </div>
