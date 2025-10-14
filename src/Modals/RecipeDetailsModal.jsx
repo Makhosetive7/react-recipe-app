@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react"; 
 import { useModal } from "../Context/modalContext";
 import styled, { keyframes } from "styled-components";
 import {
@@ -18,13 +18,8 @@ const RecipeDetailsModal = ({ recipeId, onClose }) => {
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState("instructions");
 
-  useEffect(() => {
-    if (recipeId) {
-      fetchRecipeDetails();
-    }
-  }, [recipeId]);
-
-  const fetchRecipeDetails = async () => {
+  const fetchRecipeDetails = useCallback(async () => {
+    if (!recipeId) return;
     setLoading(true);
     setError(null);
     try {
@@ -32,7 +27,7 @@ const RecipeDetailsModal = ({ recipeId, onClose }) => {
         `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
       );
       const data = await response.json();
-      
+
       if (data.meals && data.meals[0]) {
         setItem(data.meals[0]);
       } else {
@@ -43,7 +38,11 @@ const RecipeDetailsModal = ({ recipeId, onClose }) => {
       setError("Failed to load recipe details");
     }
     setLoading(false);
-  };
+  }, [recipeId]); 
+
+  useEffect(() => {
+    fetchRecipeDetails();
+  }, [fetchRecipeDetails]);
 
   const handleClose = () => {
     closeModal();
@@ -57,7 +56,6 @@ const RecipeDetailsModal = ({ recipeId, onClose }) => {
     };
   }, []);
 
-  // Extract ingredients and measurements dynamically
   const getIngredients = () => {
     if (!item) return [];
     

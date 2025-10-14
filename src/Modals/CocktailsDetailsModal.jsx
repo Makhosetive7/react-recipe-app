@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react"; // ✅ Added useCallback
 import { useModal } from "../Context/modalContext";
 import styled, { keyframes } from "styled-components";
 import {
@@ -18,13 +18,8 @@ const CocktailsDetailsModal = ({ recipeId, onClose }) => {
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState("instructions");
 
-  useEffect(() => {
-    if (recipeId) {
-      fetchCocktailDetails();
-    }
-  }, [recipeId]);
-
-  const fetchCocktailDetails = async () => {
+  const fetchCocktailDetails = useCallback(async () => {
+    if (!recipeId) return;
     setLoading(true);
     setError(null);
     try {
@@ -32,7 +27,7 @@ const CocktailsDetailsModal = ({ recipeId, onClose }) => {
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${recipeId}`
       );
       const data = await response.json();
-      
+
       if (data.drinks && data.drinks[0]) {
         setItem(data.drinks[0]);
       } else {
@@ -43,7 +38,11 @@ const CocktailsDetailsModal = ({ recipeId, onClose }) => {
       setError("Failed to load cocktail details");
     }
     setLoading(false);
-  };
+  }, [recipeId]);
+
+  useEffect(() => {
+    fetchCocktailDetails();
+  }, [fetchCocktailDetails]); 
 
   const handleClose = () => {
     closeModal();
@@ -57,7 +56,6 @@ const CocktailsDetailsModal = ({ recipeId, onClose }) => {
     };
   }, []);
 
-  // Extract ingredients and measurements dynamically
   const getIngredients = () => {
     if (!item) return [];
     
