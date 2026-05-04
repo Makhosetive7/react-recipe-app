@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "project": {
+    "totalFocusTime": 5350399,
+    "totalActiveTime": 5324
+  },
+  "files": {
+    "package.json": {
+      "pending": 5324,
+      "focus": 17086
+    }
+  }
+}
