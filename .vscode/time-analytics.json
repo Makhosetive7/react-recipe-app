@@ -1,13 +1,17 @@
 {
   "version": "1.0",
   "project": {
-    "totalFocusTime": 5658536,
-    "totalActiveTime": 9441
+    "totalFocusTime": 5677422,
+    "totalActiveTime": 12698
   },
   "files": {
     "package.json": {
       "pending": 9441,
-      "focus": 47318
+      "focus": 1249976
+    },
+    "public/index.html": {
+      "pending": 3257,
+      "focus": 17059
     }
   }
 }
