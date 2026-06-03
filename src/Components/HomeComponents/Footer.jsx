@@ -107,7 +107,7 @@ const Footer = () => {
 
         <BottomSection>
           <Copyright>
-            © 2024 Gourmet Recipes. All rights reserved.
+            © {new Date().getFullYear()} Gourmet Recipes. All rights reserved.
           </Copyright>
           <LegalLinks>
             <LegalLink to="/privacy">Privacy Policy</LegalLink>

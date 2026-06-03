@@ -28,7 +28,7 @@ const NavBar = () => {
           <NavList>
             <NavItem>
               <StyledNavLink
-                to="beefpage"
+                to="/beefPage"
                 onClick={handleLinkClick}
               >
                 <span>Beef</span>
@@ -36,7 +36,7 @@ const NavBar = () => {
             </NavItem>
             <NavItem>
               <StyledNavLink
-                to="chickenpage"
+                to="/chickenpage"
                 onClick={handleLinkClick}
               >
                 <span>Chicken</span>
@@ -44,7 +44,7 @@ const NavBar = () => {
             </NavItem>
             <NavItem>
               <StyledNavLink
-                to="cocktailpage"
+                to="/cocktailPage"
                 onClick={handleLinkClick}
               >
                 <span>Cocktails</span>
@@ -73,7 +73,7 @@ const NavBar = () => {
           <MobileNavList>
             <MobileNavItem>
               <StyledNavLink
-                to="beefpage"
+                to="/beefPage"
                 onClick={handleLinkClick}
               >
                 <span>Beef</span>
@@ -81,7 +81,7 @@ const NavBar = () => {
             </MobileNavItem>
             <MobileNavItem>
               <StyledNavLink
-                to="chickenpage"
+                to="/chickenpage"
                 onClick={handleLinkClick}
               >
                 <span>Chicken</span>
@@ -89,7 +89,7 @@ const NavBar = () => {
             </MobileNavItem>
             <MobileNavItem>
               <StyledNavLink
-                to="cocktailpage"
+                to="/cocktailPage"
                 onClick={handleLinkClick}
               >
                 <span>Cocktails</span>

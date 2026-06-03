@@ -10,6 +10,10 @@ import { FaPizzaSlice } from "react-icons/fa";
 import { GiBananaBunch, GiOrange, GiStrawberry, GiPeach } from "react-icons/gi";
 
 const About = () => {
+  const scrollToCategories = () => {
+    document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <AboutSection>
       <Container>
@@ -147,7 +151,9 @@ const About = () => {
         
         <CtaSection>
           <CtaText>Ready to start your culinary journey?</CtaText>
-          <CtaButton>Explore Recipes Now</CtaButton>
+          <CtaButton type="button" onClick={scrollToCategories}>
+            Explore Recipes Now
+          </CtaButton>
         </CtaSection>
       </Container>
     </AboutSection>

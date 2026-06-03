@@ -1,7 +1,14 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const scrollToCategories = () => {
+    document.getElementById("categories")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <HeroSection>
       <HeroBackground>
@@ -14,14 +21,15 @@ const Banner = () => {
               <GradientText> Culinary Skills</GradientText>
             </HeroTitle>
             <HeroSubtitle>
-              Discover exquisite recipes and master the art of cooking. 
+              Discover exquisite recipes and master the art of cooking.
               Transform your kitchen into a gourmet experience.
             </HeroSubtitle>
             <CtaContainer>
-              <PrimaryButton>Explore Recipes</PrimaryButton>
-              <SecondaryButton>
-                <PlayIcon>▶</PlayIcon>
-                Watch Demo
+              <PrimaryButton type="button" onClick={scrollToCategories}>
+                Explore Recipes
+              </PrimaryButton>
+              <SecondaryButton type="button" onClick={() => navigate("/cocktailPage")}>
+                Browse Cocktails
               </SecondaryButton>
             </CtaContainer>
             <StatsContainer>
@@ -71,9 +79,9 @@ const float = keyframes`
 // Styled Components
 const HeroSection = styled.section`
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
   position: relative;
-  margin-top: 80px;
+  margin-top: var(--nav-height);
   overflow: hidden;
 `;
 
@@ -230,10 +238,6 @@ const SecondaryButton = styled(Button)`
   &:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-`;
-
-const PlayIcon = styled.span`
-  font-size: 0.8rem;
 `;
 
 const StatsContainer = styled.div`

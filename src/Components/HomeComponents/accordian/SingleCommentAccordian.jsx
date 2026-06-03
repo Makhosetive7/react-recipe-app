@@ -24,7 +24,9 @@ const SingleCommentAccordion = ({ title, content, image }) => {
       </AccordionHeader>
 
       <AccordionContent className={isActive ? "active" : ""}>
-        <ContentText>{content}</ContentText>
+        <ContentInner>
+          <ContentText>{content}</ContentText>
+        </ContentInner>
       </AccordionContent>
     </AccordionContainer>
   );
@@ -34,26 +36,11 @@ const SingleCommentAccordion = ({ title, content, image }) => {
 const slideDown = keyframes`
   from {
     opacity: 0;
-    max-height: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
-    max-height: 200px;
     transform: translateY(0);
-  }
-`;
-
-const slideUp = keyframes`
-  from {
-    opacity: 1;
-    max-height: 200px;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    max-height: 0;
-    transform: translateY(-10px);
   }
 `;
 
@@ -167,29 +154,29 @@ const AccordionIcon = styled.div`
 `;
 
 const AccordionContent = styled.div`
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease, opacity 0.25s ease;
   opacity: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
 
   &.active {
-    animation: ${slideDown} 0.3s ease-out forwards;
-    max-height: 200px;
+    grid-template-rows: 1fr;
     opacity: 1;
-  }
-
-  &:not(.active) {
-    animation: ${slideUp} 0.3s ease-out forwards;
+    animation: ${slideDown} 0.35s ease-out;
   }
 `;
 
+const ContentInner = styled.div`
+  overflow: hidden;
+`;
+
 const ContentText = styled.p`
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #555;
   margin: 0;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem 1.5rem;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   background: rgba(102, 126, 234, 0.02);
 `;
