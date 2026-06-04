@@ -79,9 +79,9 @@ const float = keyframes`
 // Styled Components
 const HeroSection = styled.section`
   width: 100%;
-  min-height: calc(100vh - var(--nav-height));
+  height: 100vh;
   position: relative;
-  margin-top: var(--nav-height);
+  margin-top: 80px;
   overflow: hidden;
 `;
 
